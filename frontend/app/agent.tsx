@@ -85,12 +85,6 @@ async function agent(inputs: {
         
         // Update the dedicated display component stream with the loading state
         fields.displayComponent.update(selectedToolComponent.loading());
-        
-        // Add a message to the chat indicating a tool is being used
-        const toolMessage = createStreamableValue();
-        toolMessage.append(`Using ${toolCall.type} tool...`);
-        toolMessage.done();
-        fields.ui.append(<AIMessage value={toolMessage.value} />);
       }
     }
   };

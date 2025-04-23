@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { EndpointsContext } from "@/app/agent";
@@ -23,17 +23,61 @@ export default function Chat() {
   const actions = useActions<typeof EndpointsContext>();
   const { addDisplayComponentStream } = useDisplay();
   const messageContainerRef = useRef<HTMLDivElement>(null);
+  const [isAtBottom, setIsAtBottom] = useState(true);
+  const [shouldScroll, setShouldScroll] = useState(true); // Flag to force scroll on new message
 
   const [elements, setElements] = useState<JSX.Element[]>([]);
   const [history, setHistory] = useState<[role: string, content: string][]>([]);
   const [input, setInput] = useState("");
 
-  // Auto-scroll to bottom when messages change
-  useEffect(() => {
-    if (messageContainerRef.current) {
-      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+  // Handle scrolling logic
+  useLayoutEffect(() => {
+    const container = messageContainerRef.current;
+    if (!container) return;
+
+    // Function to scroll to bottom
+    const scrollToBottom = () => {
+      container.scrollTop = container.scrollHeight;
+    };
+
+    // Initial scroll check and force scroll on new element addition
+    if (shouldScroll) {
+      scrollToBottom();
+      setShouldScroll(false); // Reset the flag after scrolling
+      setIsAtBottom(true); // Assume we start at the bottom
     }
-  }, [elements]);
+
+    // Track scroll position
+    const handleScroll = () => {
+      if (!container) return;
+      const tolerance = 10; // Pixels tolerance to consider "at bottom"
+      const atBottom = container.scrollHeight - container.scrollTop - container.clientHeight <= tolerance;
+      setIsAtBottom(atBottom);
+    };
+
+    container.addEventListener('scroll', handleScroll);
+
+    // Observe content changes (for streaming)
+    const observer = new MutationObserver(() => {
+      if (isAtBottom) {
+        scrollToBottom();
+      }
+    });
+
+    observer.observe(container, {
+      childList: true, // Observe direct children additions/removals
+      subtree: true,   // Observe all descendants
+      characterData: true, // Observe text changes
+    });
+
+    // Cleanup
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+    // Rerun effect if isAtBottom state changes (to re-evaluate scroll on mutation)
+    // or if elements length changes (to trigger initial scroll via shouldScroll)
+  }, [elements, isAtBottom, shouldScroll]); 
 
   async function onSubmit(input: string) {
     const newElements = [...elements];
@@ -84,7 +128,27 @@ export default function Chat() {
     })();
 
     setElements(newElements);
+    setShouldScroll(true); // Set flag to scroll when new elements are added
     setInput("");
+  }
+
+  // Function to handle resetting the chat history
+  async function handleReset() {
+    try {
+      // Call the backend endpoint to clear the history file
+      await fetch("http://localhost:8000/reset", {
+        method: "POST",
+      });
+      // Clear the frontend chat display and history state
+      setElements([]);
+      setHistory([]);
+      // Optionally clear the display area if needed
+      // addDisplayComponentStream(null); // Or create a streamable value and set it to null
+      console.log("Chat history reset.");
+    } catch (error) {
+      console.error("Failed to reset chat history:", error);
+      // Optionally show an error message to the user
+    }
   }
 
   return (
@@ -113,6 +177,10 @@ export default function Chat() {
           onChange={(e) => setInput(e.target.value)}
         />
         <Button type="submit">Send</Button>
+        {/* Add the Reset button */}
+        <Button type="button" variant="outline" onClick={handleReset}>
+          Reset
+        </Button>
       </form>
     </div>
   );

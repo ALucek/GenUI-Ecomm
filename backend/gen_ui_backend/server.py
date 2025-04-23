@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from langserve import add_routes
 
-from gen_ui_backend.chain import create_graph
+from gen_ui_backend.chain import create_graph, reset_chat_history
 from gen_ui_backend.types import ChatInputType
 
 # Load environment variables from .env file
@@ -37,5 +37,12 @@ def start() -> None:
     runnable = graph.with_types(input_type=ChatInputType, output_type=dict)
 
     add_routes(app, runnable, path="/chat", playground_type="chat")
+
+    # Add endpoint to reset chat history
+    @app.post("/reset")
+    async def reset_history_endpoint():
+        reset_chat_history()
+        return {"message": "Chat history reset successfully"}
+
     print("Starting server...")
     uvicorn.run(app, host="0.0.0.0", port=8000)
