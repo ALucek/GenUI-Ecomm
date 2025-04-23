@@ -27,6 +27,10 @@ backend_dir = Path(__file__).parent.parent
 HISTORY_FILE_PATH = backend_dir / "chat_history.csv"
 HISTORY_HEADERS = ["role", "content"]
 
+# Define the initial AI message
+INITIAL_AI_MESSAGE_CONTENT = f"Welcome! I'm your helpful {PRODUCT_TYPE} shopping assistant. How can I help you find the perfect {PRODUCT_TYPE} today?"
+INITIAL_AI_MESSAGE = AIMessage(content=INITIAL_AI_MESSAGE_CONTENT)
+
 # Load product catalog data
 def load_product_catalog():
     try:
@@ -58,49 +62,92 @@ def load_product_catalog():
 # Load chat history from CSV
 def load_chat_history() -> List:
     history = []
-    if not HISTORY_FILE_PATH.is_file():
-        # Create the file with headers if it doesn't exist
-        with open(HISTORY_FILE_PATH, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(HISTORY_HEADERS)
-        return history # Return empty history as the file was just created
+    if not HISTORY_FILE_PATH.is_file() or HISTORY_FILE_PATH.stat().st_size == 0:
+        # Create the file with headers and initial AI message if it doesn't exist or is empty
+        try:
+            with open(HISTORY_FILE_PATH, "w", newline="") as file:
+                writer = csv.writer(file)
+                writer.writerow(HISTORY_HEADERS)
+                writer.writerow(["ai", INITIAL_AI_MESSAGE_CONTENT])
+            # Return only the initial AI message for a new session
+            return [INITIAL_AI_MESSAGE]
+        except Exception as e:
+             print(f"Error creating initial history file: {str(e)}. Returning empty history.")
+             return []
 
     try:
-        with open(HISTORY_FILE_PATH, 'r', newline='') as file:
+        with open(HISTORY_FILE_PATH, "r", newline="") as file:
             reader = csv.DictReader(file)
             if reader.fieldnames != HISTORY_HEADERS:
                  # Handle case where headers are incorrect/missing
                  print(f"Warning: History file {HISTORY_FILE_PATH} has incorrect headers. Resetting.")
-                 reset_chat_history() # Reset the file
-                 return [] # Return empty history
+                 reset_chat_history() # This will reset and add the initial message
+                 return [INITIAL_AI_MESSAGE] # Return the initial message after reset
 
-            for row in reader:
+            rows = list(reader)
+            # Check if the file only contains headers (or less), implying it was reset/corrupted somehow
+            # Or if the first message isn't the expected initial AI message
+            if not rows or (rows[0].get("role") != "ai" or rows[0].get("content") != INITIAL_AI_MESSAGE_CONTENT):
+                 print(f"Warning: History file {HISTORY_FILE_PATH} seems incomplete or missing initial message. Resetting.")
+                 reset_chat_history() # Reset to ensure initial message consistency
+                 return [INITIAL_AI_MESSAGE]
+
+            # Build history from rows, skipping the first row if it's the initial AI message
+            # The initial message is handled implicitly by the frontend or initial state
+            # Update: No, the history passed to the LLM needs the full context including the initial message.
+            for row in rows:
                 if row.get("role") == "human":
                     history.append(HumanMessage(content=row.get("content", "")))
                 elif row.get("role") == "ai":
-                    # Storing AI responses (including potential tool calls/results summaries)
-                    # For simplicity, we store the content as is.
-                    # More complex scenarios might require structured storage.
                     history.append(AIMessage(content=row.get("content", "")))
+
     except Exception as e:
-        print(f"Error loading chat history: {str(e)}. Starting fresh.")
-        # Optionally reset or just return empty list
-        reset_chat_history()
-        return []
+        print(f"Error loading chat history: {str(e)}. Resetting history.")
+        reset_chat_history() # Reset on error
+        return [INITIAL_AI_MESSAGE] # Return initial message after reset
+
+    # If history loaded successfully but is somehow empty (should not happen with checks above), return initial
+    if not history:
+        return [INITIAL_AI_MESSAGE]
+
     return history
 
 
 # Append a message to the chat history CSV
 def append_to_chat_history(role: str, content: str):
-    try:
-        # Ensure headers exist if file is empty or newly created
-        if not HISTORY_FILE_PATH.is_file() or HISTORY_FILE_PATH.stat().st_size == 0:
-             with open(HISTORY_FILE_PATH, 'w', newline='') as file:
-                writer = csv.writer(file)
-                writer.writerow(HISTORY_HEADERS)
+    # Prevent appending the initial AI message redundantly
+    if role == "ai" and content == INITIAL_AI_MESSAGE_CONTENT:
+        # Check if the file already contains this exact message as the first message
+        try:
+            if HISTORY_FILE_PATH.is_file() and HISTORY_FILE_PATH.stat().st_size > 0:
+                 with open(HISTORY_FILE_PATH, "r", newline="") as file:
+                    reader = csv.reader(file)
+                    header = next(reader, None) # Skip header
+                    first_message = next(reader, None)
+                    if first_message and first_message == ["ai", INITIAL_AI_MESSAGE_CONTENT]:
+                        # print("Skipping redundant append of initial AI message.") # Debugging line
+                        return # Don't append if it's already the first message
+        except Exception as e:
+             print(f"Error checking history before append: {str(e)}")
+             # Proceed with append if check fails, might lead to duplicates in rare cases
 
-        with open(HISTORY_FILE_PATH, 'a', newline='') as file:
+    try:
+        # Ensure headers exist if file is empty or newly created (shouldn't be needed with load_chat_history changes)
+        # Mode 'a' will create the file if it doesn't exist, but load_chat_history should handle the initial state.
+        # We still need headers if somehow the file exists but is empty after load_chat_history ran? Unlikely.
+        # Adding a check just in case.
+        needs_headers = not HISTORY_FILE_PATH.is_file() or HISTORY_FILE_PATH.stat().st_size == 0
+
+        with open(HISTORY_FILE_PATH, "a", newline="") as file:
             writer = csv.writer(file)
+            if needs_headers:
+                writer.writerow(HISTORY_HEADERS)
+                # If we are writing headers, it implies the file was empty,
+                # so we should also write the initial AI message IF the message
+                # being appended isn't the initial one itself.
+                if not (role == "ai" and content == INITIAL_AI_MESSAGE_CONTENT):
+                    writer.writerow(["ai", INITIAL_AI_MESSAGE_CONTENT])
+
             writer.writerow([role, content])
     except Exception as e:
         print(f"Error appending to chat history: {str(e)}")
@@ -109,9 +156,10 @@ def append_to_chat_history(role: str, content: str):
 # Function to reset/clear the chat history file
 def reset_chat_history():
     try:
-        with open(HISTORY_FILE_PATH, 'w', newline='') as file:
+        with open(HISTORY_FILE_PATH, "w", newline="") as file:
             writer = csv.writer(file)
-            writer.writerow(HISTORY_HEADERS) # Write only headers
+            writer.writerow(HISTORY_HEADERS) # Write headers
+            writer.writerow(["ai", INITIAL_AI_MESSAGE_CONTENT]) # Write initial AI message
         print(f"Chat history reset: {HISTORY_FILE_PATH}")
     except Exception as e:
         print(f"Error resetting chat history: {str(e)}")

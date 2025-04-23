@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 import { useDisplay } from "@/utils/display-context";
 import { useStreamableValue } from "ai/rsc";
-import { Button } from "../ui/button";
+import InitialCarousel from "./initial-carousel";
 
 export default function DisplayArea() {
   const { displayComponentStreams, clearDisplayComponentStreams } = useDisplay();
@@ -29,10 +29,12 @@ export default function DisplayArea() {
   const [component9] = useStreamableValue(displayComponentStreams[9] ?? undefined);
   // Add more if necessary
 
-  // Get the most recent component
-  const latestComponent = 
-    component9 || component8 || component7 || component6 || component5 || 
-    component4 || component3 || component2 || component1 || component0;
+  // Determine the latest component *only if* streams exist
+  const latestComponent =
+    displayComponentStreams.length > 0
+      ? component9 || component8 || component7 || component6 || component5 ||
+        component4 || component3 || component2 || component1 || component0
+      : null; // Force null if streams are empty
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-start rounded-lg border border-gray-200 bg-gray-50/25 p-4">
@@ -42,9 +44,8 @@ export default function DisplayArea() {
             {latestComponent}
           </div>
         ) : (
-          <div className="text-center text-gray-500">
-            <p className="text-xl font-semibold">Interactive Product Space</p>
-            <p className="text-sm">Generated components will appear here</p>
+          <div className="w-full">
+            <InitialCarousel />
           </div>
         )}
       </div>

@@ -6,6 +6,7 @@ import { EventHandlerFields } from "@/utils/server";
 import { ProductDetail, ProductDetailLoading } from "@/components/prebuilt/product-detail";
 import { Comparison, ComparisonLoading } from "@/components/prebuilt/product-comparison";
 import { ProductTiles, ProductTilesLoading } from "@/components/prebuilt/product-tiles";
+import { ProductCarousel } from "@/components/prebuilt/product-carousel";
 import { createStreamableUI, createStreamableValue } from "ai/rsc";
 import { AIMessage } from "@/ai/message";
 
@@ -32,6 +33,10 @@ const TOOL_COMPONENT_MAP: ToolComponentMap = {
   "product-tiles": {
     loading: (props?: any) => <ProductTilesLoading {...props} />,
     final: (props?: any) => <ProductTiles {...props} />,
+  },
+  "product-carousel": {
+    loading: (props?: any) => <ProductCarousel isLoading={true} {...props} />,
+    final: (props?: any) => <ProductCarousel {...props} />,
   },
 };
 

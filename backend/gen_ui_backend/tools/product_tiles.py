@@ -12,10 +12,11 @@ from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPO
 class ProductTilesInput(BaseModel):
     product_ids: List[str] = Field(..., description=f"A list of product IDs to display as tiles")
     title: str = Field(default="Recommended Products", description=f"Optional title for the {PRODUCT_TYPE} tiles section")
+    description: str = Field(default="", description=f"Optional generative content to display with the {PRODUCT_TYPE} tiles, based on the conversation context")
 
 
 @tool("product-tiles", args_schema=ProductTilesInput, return_direct=True)
-def product_tiles(product_ids: List[str], title: str = "Recommended Products") -> dict:
+def product_tiles(product_ids: List[str], title: str = "Recommended Products", description: str = "") -> dict:
     """Display multiple products as tiles with basic information."""
     try:
         with open(CATALOG_PATH, 'r') as file:
@@ -52,7 +53,8 @@ def product_tiles(product_ids: List[str], title: str = "Recommended Products") -
         # Return the data
         result = {
             "title": title,
-            "products": found_products
+            "products": found_products,
+            "description": description
         }
         
         if not_found_ids:

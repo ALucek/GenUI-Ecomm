@@ -1,13 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { Fragment } from "react";
 import { currentConfig, formatFieldLabel, formatFieldValue } from "./config";
+import ReactMarkdown from "react-markdown";
 
 interface ProductTilesData {
   title: string;
   products: any[];
+  description?: string;
   warning?: string;
   error?: string;
 }
@@ -46,7 +50,7 @@ export function ProductTilesLoading() {
   );
 }
 
-export function ProductTiles({ title, products, warning, error }: ProductTilesData) {
+export function ProductTiles({ title, products, description, warning, error }: ProductTilesData) {
   // Get badge fields from config that exist in the first product
   const badgeFieldsToShow = products.length > 0
     ? currentConfig.badgeFields.filter(
@@ -69,6 +73,11 @@ export function ProductTiles({ title, products, warning, error }: ProductTilesDa
     <Card className="w-full max-w-6xl mx-auto my-4">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
+        {description && (
+          <CardDescription className="mt-2">
+            <ReactMarkdown>{description}</ReactMarkdown>
+          </CardDescription>
+        )}
         {warning && <CardDescription className="text-amber-500">{warning}</CardDescription>}
       </CardHeader>
       <CardContent>
@@ -105,14 +114,22 @@ export function ProductTiles({ title, products, warning, error }: ProductTilesDa
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0">
-                <a 
-                  href={product.marketing_link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-md text-sm w-full text-center"
+                <Button 
+                  variant="default" 
+                  size="sm"
+                  className="w-full group"
+                  asChild
                 >
-                  View Details
-                </a>
+                  <a 
+                    href={product.marketing_link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1"
+                  >
+                    View Details
+                    <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                </Button>
               </CardFooter>
             </Card>
           ))}

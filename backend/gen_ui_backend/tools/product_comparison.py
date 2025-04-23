@@ -12,10 +12,11 @@ from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPO
 class ProductComparisonInput(BaseModel):
     product_id_1: str = Field(..., description=f"The product ID of the first {PRODUCT_TYPE} item to compare")
     product_id_2: str = Field(..., description=f"The product ID of the second {PRODUCT_TYPE} item to compare")
+    description: str = Field(default="", description=f"Optional generative content to display with the {PRODUCT_TYPE} comparison, based on the conversation context")
 
 
 @tool("product-comparison", args_schema=ProductComparisonInput, return_direct=True)
-def product_comparison(product_id_1: str, product_id_2: str) -> dict:
+def product_comparison(product_id_1: str, product_id_2: str, description: str = "") -> dict:
     """Compare two products side-by-side based on their product IDs."""
     try:
         with open(CATALOG_PATH, 'r') as file:
@@ -55,7 +56,8 @@ def product_comparison(product_id_1: str, product_id_2: str) -> dict:
                 **product2,
                 "has_image": has_image2,
                 "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_2}" if has_image2 else None
-            }
+            },
+            "description": description
         }
         
         # Add comparison highlights if products have the necessary fields

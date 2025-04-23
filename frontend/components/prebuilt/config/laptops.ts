@@ -50,7 +50,7 @@ export const fieldFormatters: { [key: string]: (value: any) => string } = {
   ram_gb: (value) => `${value} GB RAM`,
   storage_gb: (value) => `${value} GB`,
   screen_size_inches: (value) => `${value}"`,
-  battery_life_hours: (value) => `${value}h battery`,
+  battery_life_hours: (value) => `${value}`,
   weight_kg: (value) => `${value} kg`
 };
 

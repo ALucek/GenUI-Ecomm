@@ -11,10 +11,11 @@ from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPO
 
 class ProductDetailsInput(BaseModel):
     product_id: str = Field(..., description=f"The product ID of the {PRODUCT_TYPE} item to display")
+    description: str = Field(default="", description=f"Optional generative content to display with the {PRODUCT_TYPE} details, based on the conversation context")
 
 
 @tool("product-details", args_schema=ProductDetailsInput, return_direct=True)
-def product_details(product_id: str) -> dict:
+def product_details(product_id: str, description: str = "") -> dict:
     """Get details about a product from the catalog based on its product ID."""
     # Load the product data from the CSV file
     try:
@@ -39,7 +40,8 @@ def product_details(product_id: str) -> dict:
         return {
             **product,
             "has_image": has_image,
-            "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id}" if has_image else None
+            "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id}" if has_image else None,
+            "description": description
         }
     
     except Exception as e:

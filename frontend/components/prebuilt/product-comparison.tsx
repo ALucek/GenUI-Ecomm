@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { currentConfig, formatFieldLabel, formatFieldValue } from "./config";
+import ReactMarkdown from "react-markdown";
 
 interface ProductComparisonData {
   [key: string]: any;
@@ -56,7 +58,7 @@ export function ComparisonLoading() {
 }
 
 export function Comparison(props: ProductComparisonData) {
-  const { product1, product2, error } = props;
+  const { product1, product2, description, error } = props;
   if (error) {
     return (
       <Card className="w-full max-w-6xl mx-auto my-4">
@@ -111,6 +113,11 @@ export function Comparison(props: ProductComparisonData) {
         <CardDescription className="text-center">
           Compare features and specifications side-by-side
         </CardDescription>
+        {description && (
+          <div className="mt-4">
+            <ReactMarkdown className="text-muted-foreground text-center">{description}</ReactMarkdown>
+          </div>
+        )}
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -160,14 +167,22 @@ export function Comparison(props: ProductComparisonData) {
               
               {/* View Product Link */}
               <div className="pt-4">
-                <a 
-                  href={product1.marketing_link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm inline-block"
+                <Button 
+                  variant="default" 
+                  size="sm"
+                  className="group"
+                  asChild
                 >
-                  View Product
-                </a>
+                  <a 
+                    href={product1.marketing_link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    View Product
+                    <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
@@ -218,14 +233,22 @@ export function Comparison(props: ProductComparisonData) {
               
               {/* View Product Link */}
               <div className="pt-4">
-                <a 
-                  href={product2.marketing_link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm inline-block"
+                <Button 
+                  variant="default" 
+                  size="sm"
+                  className="group"
+                  asChild
                 >
-                  View Product
-                </a>
+                  <a 
+                    href={product2.marketing_link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1"
+                  >
+                    View Product
+                    <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                </Button>
               </div>
             </div>
           </div>

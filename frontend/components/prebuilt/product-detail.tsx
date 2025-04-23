@@ -1,8 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { currentConfig, formatFieldLabel, formatFieldValue } from "./config";
+import ReactMarkdown from "react-markdown";
 
 interface ProductDetailData {
   [key: string]: any;
@@ -36,7 +39,7 @@ export function ProductDetailLoading() {
 }
 
 export function ProductDetail(props: ProductDetailData) {
-  const { error } = props;
+  const { error, description } = props;
   
   if (error) {
     return (
@@ -54,7 +57,6 @@ export function ProductDetail(props: ProductDetailData) {
   const brand = props.brand;
   const price = props.price;
   const marketing_link = props.marketing_link;
-  const datasheet_link = props.datasheet_link;
   const has_image = props.has_image;
   const image_url = props.image_url;
   
@@ -78,15 +80,28 @@ export function ProductDetail(props: ProductDetailData) {
               <span className="font-medium">{brand}</span> · {price}
             </CardDescription>
           </div>
-          <a 
-            href={marketing_link} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm"
+          <Button 
+            variant="default" 
+            size="sm" 
+            asChild
+            className="group"
           >
-            View Product
-          </a>
+            <a 
+              href={marketing_link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-1"
+            >
+              View Product
+              <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </Button>
         </div>
+        {description && (
+          <div className="mt-4">
+            <ReactMarkdown className="text-muted-foreground">{description}</ReactMarkdown>
+          </div>
+        )}
       </CardHeader>
       <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="flex justify-center items-center">
@@ -123,16 +138,6 @@ export function ProductDetail(props: ProductDetailData) {
                 {formatFieldValue(field, props[field])}
               </Badge>
             ))}
-          </div>
-          <div className="pt-2">
-            <a
-              href={datasheet_link}
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-700 text-sm underline"
-            >
-              View Full Specifications
-            </a>
           </div>
         </div>
       </CardContent>
