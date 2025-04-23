@@ -3,85 +3,19 @@ ai,Welcome! I'm your helpful laptops shopping assistant. How can I help you find
 human,hi
 ai,"Hi Alex! 👋
 
-How can I help you with your next laptops purchase today? Are you looking for something lightweight and powerful for software development, or do you have a specific model in mind? Let me know your priorities, and I’ll show you the best options!"
-human,Yeah another dev one
-ai,"Tool Calls: [{'args': {'product_ids': ['5', '3', '7', '6'], 'title': 'Top Laptops for Developers (Great Value & Linux Friendly)', 'description': 'Here are some excellent laptops for software development that balance portability, performance, and value. These options are lightweight, have strong Linux compatibility, and offer long battery life—perfect for coding on the go.'}, 'type': 'product-tiles'}]"
-ai,"Okay, I've pulled up a selection of top laptops that are especially well-suited for software development, keeping your preferences in mind—lightweight, high performance, strong Linux compatibility, and great value.
+How can I help you with your next laptops purchase? Are you looking for something lightweight and powerful for software development, or do you have a specific model in mind to explore today?"
+human,something windows
+ai,"Tool Calls: [{'args': {'product_ids': ['5', '6', '7', '8', '9'], 'title': 'Top Windows Laptops for Developers', 'description': 'Here are some great Windows laptops that balance portability, performance, and value—perfect for software development. These options are lightweight, have strong battery life, and offer good Linux compatibility if you dual-boot or use WSL. Let me know if you want to compare any of these or see more details!'}, 'type': 'product-tiles'}]"
+ai,"I've pulled up a selection of top Windows laptops that are well-suited for software development, keeping your preferences in mind—lightweight design, strong performance, good battery life, and Linux compatibility.
 
-Here’s how these options can benefit you as a developer:
+Here’s how these options can benefit you:
 
-- **ThinkPad X1 Carbon Gen 12**: Renowned for its durability and portability (just 1.09kg), this model offers up to 16 hours of battery life—ideal for remote work. ThinkPads are also known for excellent Linux support, making it a reliable choice for coding on the go.
+- **Lenovo ThinkPad X1 Carbon Gen 12**: Extremely lightweight (just over 1kg), up to 16 hours of battery life, and a reputation for excellent Linux support. Great for portability and long coding sessions on the go.
+- **ASUS Zenbook Duo (UX8406)**: Unique dual-screen setup for multitasking, powerful Intel Core Ultra 7 processor, and still portable. Ideal if you like having extra screen real estate for coding and documentation.
+- **HP Spectre x360 16 2-in-1**: Versatile convertible design, high-res OLED touchscreen, and strong performance. Useful if you want a laptop that doubles as a tablet for note-taking or sketching ideas.
+- **Alienware m16 R2**: More powerful graphics (RTX 4060), suitable if you do any GPU-intensive development or gaming, though it’s a bit heavier.
+- **Acer Nitro V 15**: Budget-friendly, decent specs for the price, and dedicated graphics. Good if you want value and don’t mind a slightly heavier laptop.
 
-- **Framework Laptop 16 DIY**: If you value customization and upgradability, this is a standout. You can choose your own RAM and storage, and the open hardware design is very Linux-friendly. It’s a bit heavier, but offers a large, high-res display and future-proofing.
+All these models offer good Linux compatibility, so you can dual-boot or use WSL for your development work.
 
-- **HP Spectre x360 16 2-in-1**: This convertible gives you flexibility with a touchscreen OLED display and strong performance (Intel Ultra 7 + RTX 4050). It’s a bit larger, but still portable, and offers solid battery life for a 16-inch device.
-
-- **ASUS Zenbook Duo (UX8406)**: Unique for its dual-screen setup, this is great if you like multitasking or need extra screen real estate for coding and debugging. It’s lightweight for a dual-screen laptop and offers up to 13.5 hours of battery life (with one screen).
-
-All of these options are within a similar price range and offer a balance of performance and portability, with good Linux compatibility—matching your needs as a software developer who works remotely and values value over brand.
-
-Would you like a deeper comparison between any of these models, or do you have specific features (like 32GB RAM or certain ports) you want to prioritize? Let me know how you’d like to proceed!"
-human,tell me more bout the framework
-ai,"Tool Calls: [{'args': {'product_id': '3', 'description': 'The Framework Laptop 16 DIY is a standout choice for developers who value customization, repairability, and Linux compatibility. Its modular design lets you choose your own RAM and storage, making it easy to upgrade as your needs grow. The large 16-inch high-resolution display is perfect for multitasking and coding, while the AMD Ryzen 7040 Series processor delivers strong performance for development workloads. Framework laptops are well-known for their excellent Linux support, making this a future-proof and flexible option for software development.'}, 'type': 'product-details'}]"
-ai,"Here’s a detailed look at the **Framework Laptop 16 DIY**, which stands out as a fantastic choice for developers like you who value flexibility, Linux compatibility, and long-term value:
-
-**Key Benefits for You:**
-
-- **Ultimate Customization & Upgradability:** You can choose and upgrade your own RAM (up to 64GB) and storage (up to 10TB), so you’re never locked into outdated hardware. This is perfect if your development needs grow or change over time.
-
-- **Linux-Friendly:** Framework has a strong reputation for Linux support, with step-by-step guides for popular distributions—so you can set up your preferred dev environment with minimal hassle.
-
-- **Modular Design:** Swap out ports, input modules (like numpad or macro keys), and even the graphics module. This means you can tailor the laptop to your workflow, whether you need more USB ports, a specific keyboard layout, or future GPU upgrades.
-
-- **Performance:** Powered by the AMD Ryzen 7040HS series, it delivers excellent multi-core performance for coding, compiling, and multitasking. The integrated Radeon 780M graphics are solid for development and light creative work, and you can add a discrete GPU if needed.
-
-- **Display:** The 16-inch, 2560x1600 display is bright (500 nits), color-accurate, and has a fast 165Hz refresh rate—great for both productivity and occasional gaming or creative tasks.
-
-- **Portability & Build:** At 2.1kg, it’s not ultralight, but still portable for a 16-inch laptop. The chassis is made from recycled magnesium and aluminum, making it both durable and eco-friendly.
-
-- **Privacy & Transparency:** Hardware privacy switches for the camera and mic, open-source firmware, and no bloatware—giving you control and peace of mind.
-
-- **Sustainability:** Designed to last, with easy repair and upgrade options, plus eco-friendly materials and packaging.
-
-**Why it’s a great fit for you:**  
-If you want a laptop that adapts to your needs, is easy to repair or upgrade, and works seamlessly with Linux, the Framework Laptop 16 DIY is hard to beat—especially for a developer who values both performance and long-term value.
-
-Would you like to see how it compares to other models, or do you have specific questions about configuration, Linux support, or pricing?"
-human,hmm whats next comporable
-ai,"Tool Calls: [{'args': {'product_id_1': '3', 'product_id_2': '5', 'description': ""Here's a side-by-side comparison of the Framework Laptop 16 DIY and the Lenovo ThinkPad X1 Carbon Gen 12. Both are excellent choices for developers who value portability, performance, and Linux compatibility, but each offers unique strengths. This comparison will help you decide which best fits your workflow and preferences.""}, 'type': 'product-comparison'}]"
-ai,"Here’s a side-by-side look at the **Framework Laptop 16 DIY** and the **Lenovo ThinkPad X1 Carbon Gen 12**—both excellent for software development, but each with unique strengths that might fit your workflow differently:
-
----
-
-### **Framework Laptop 16 DIY**
-- **Ultimate Customization:** You choose and upgrade RAM, storage, ports, and even the keyboard layout. This is perfect if you want a laptop that can evolve with your needs or if you like tinkering.
-- **Linux-Ready:** Excellent Linux compatibility, with step-by-step guides for major distros.
-- **Performance:** AMD Ryzen 7040HS CPU and up to 64GB RAM (user-supplied) deliver serious power for coding, compiling, and multitasking.
-- **Display:** Large 16"" 2560x1600, 165Hz, 500 nits—great for multitasking and visual work.
-- **Modular Ports:** Six expansion slots let you pick exactly the ports you need—no more dongles.
-- **Sustainability:** Designed for repair and longevity, with recycled materials and open-source hardware/firmware.
-- **Weight:** 2.1kg—portable for a 16"" laptop, but heavier than ultralights.
-- **Price:** $1,399 (base, before RAM/storage).
-
----
-
-### **ThinkPad X1 Carbon Gen 12**
-- **Ultra-Light & Portable:** Weighs just 1.09kg, making it ideal for travel and working from anywhere.
-- **Battery Life:** Up to 16 hours—excellent for long coding sessions away from a charger.
-- **Linux Support:** Official Ubuntu and Fedora options, plus the ThinkPad reputation for Linux compatibility.
-- **Performance:** Intel Core Ultra 5, 16GB RAM, 512GB SSD—snappy for most dev tasks, though less customizable than Framework.
-- **Display:** 14"" 1920x1200 IPS (option for 2.8K OLED), Eyesafe certified for reduced eye strain.
-- **Durability:** MIL-STD 810H tested for ruggedness; spill-resistant keyboard.
-- **Security:** Advanced features like fingerprint reader, webcam shutter, and ThinkShield security suite.
-- **Sustainability:** Uses recycled materials and eco-friendly packaging.
-- **Price:** $1,456.95 (as configured).
-
----
-
-### **Which is right for you?**
-- **Choose the Framework** if you want maximum flexibility, upgradability, and a larger screen for multitasking, and you don’t mind a bit of extra weight.
-- **Choose the ThinkPad X1 Carbon** if you prioritize ultra-light portability, all-day battery life, and a proven, durable design for working on the go.
-
-Both are strong choices for Linux development and remote work. If you have a preference for a lighter laptop or need to carry it everywhere, the ThinkPad is hard to beat. If you want a machine you can truly make your own and upgrade over time, the Framework is unmatched.
-
-**Would you like to dive deeper into either model, see more options, or talk about specific configurations (like 32GB RAM or display upgrades)?** Let me know what matters most for your workflow!"
+Would you like to see a detailed comparison between any of these models, or are there specific features (like RAM, storage, or display type) you want to prioritize? Let me know what matters most for your workflow!"

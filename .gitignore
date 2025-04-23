@@ -1,4 +1,7 @@
 .env
+backend/switches
 .mypy_cache
 .DS_Store
 */__pycache__
+backend/chat_history.csv
+backend/genui_backend/__pycache__
