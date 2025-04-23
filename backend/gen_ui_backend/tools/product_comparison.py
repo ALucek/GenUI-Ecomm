@@ -6,70 +6,87 @@ from pathlib import Path
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.tools import tool
 
+from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPOINT, PRODUCT_TYPE
+
 
 class ProductComparisonInput(BaseModel):
-    product_id_1: str = Field(..., description="The product ID of the first laptop to compare")
-    product_id_2: str = Field(..., description="The product ID of the second laptop to compare")
+    product_id_1: str = Field(..., description=f"The product ID of the first {PRODUCT_TYPE} item to compare")
+    product_id_2: str = Field(..., description=f"The product ID of the second {PRODUCT_TYPE} item to compare")
 
 
 @tool("product-comparison", args_schema=ProductComparisonInput, return_direct=True)
 def product_comparison(product_id_1: str, product_id_2: str) -> dict:
-    """Compare two laptops side-by-side based on their product IDs."""
-    # Get the path to the laptops directory
-    backend_dir = Path(__file__).parent.parent.parent
-    laptops_dir = backend_dir / "laptops"
-    catalog_path = laptops_dir / "catalog.csv"
-    
+    """Compare two products side-by-side based on their product IDs."""
     try:
-        with open(catalog_path, 'r') as file:
+        with open(CATALOG_PATH, 'r') as file:
             reader = csv.DictReader(file)
-            laptops = list(reader)
+            products = list(reader)
         
-        # Find the laptops with the matching product IDs
-        laptop1 = next((l for l in laptops if l["product_id"] == product_id_1), None)
-        laptop2 = next((l for l in laptops if l["product_id"] == product_id_2), None)
+        # Find the products with the matching product IDs
+        product1 = next((p for p in products if p["product_id"] == product_id_1), None)
+        product2 = next((p for p in products if p["product_id"] == product_id_2), None)
         
         errors = []
-        if not laptop1:
-            errors.append(f"No laptop found with product ID: {product_id_1}")
-        if not laptop2:
-            errors.append(f"No laptop found with product ID: {product_id_2}")
+        if not product1:
+            errors.append(f"No {PRODUCT_TYPE} item found with product ID: {product_id_1}")
+        if not product2:
+            errors.append(f"No {PRODUCT_TYPE} item found with product ID: {product_id_2}")
         
         if errors:
             return {
                 "error": ". ".join(errors),
-                "available_ids": [l["product_id"] for l in laptops]
+                "available_ids": [p["product_id"] for p in products]
             }
         
-        # Check if images exist for these laptops
-        image_path1 = laptops_dir / "images" / f"{product_id_1}.jpg"
-        image_path2 = laptops_dir / "images" / f"{product_id_2}.jpg"
+        # Check if images exist for these products
+        image_path1 = IMAGES_DIR / f"{product_id_1}.jpg"
+        image_path2 = IMAGES_DIR / f"{product_id_2}.jpg"
         has_image1 = image_path1.exists()
         has_image2 = image_path2.exists()
         
         # Prepare comparison data
-        comparison = {
+        comparison_data = {
             "product1": {
-                **laptop1,
+                **product1,
                 "has_image": has_image1,
-                "image_url": f"/api/laptop-images/{product_id_1}" if has_image1 else None
+                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_1}" if has_image1 else None
             },
             "product2": {
-                **laptop2,
+                **product2,
                 "has_image": has_image2,
-                "image_url": f"/api/laptop-images/{product_id_2}" if has_image2 else None
-            },
-            # Add comparison highlights
-            "comparison": {
-                "price_difference": abs(float(laptop1["price"].replace("$", "").replace(",", "")) - 
-                                       float(laptop2["price"].replace("$", "").replace(",", ""))),
-                "ram_difference": abs(int(laptop1["ram_gb"]) - int(laptop2["ram_gb"])),
-                "storage_difference": abs(int(laptop1["storage_gb"]) - int(laptop2["storage_gb"])),
-                "screen_size_difference": abs(float(laptop1["screen_size_inches"]) - float(laptop2["screen_size_inches"]))
+                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_2}" if has_image2 else None
             }
         }
         
-        return comparison
+        # Add comparison highlights if products have the necessary fields
+        # (This will depend on the product type)
+        comparison_highlights = {}
+        
+        # Common price comparison if price field exists
+        if "price" in product1 and "price" in product2:
+            try:
+                price1 = float(product1["price"].replace("$", "").replace(",", ""))
+                price2 = float(product2["price"].replace("$", "").replace(",", ""))
+                comparison_highlights["price_difference"] = abs(price1 - price2)
+            except (ValueError, AttributeError):
+                # Handle case where price is not a valid number or doesn't have replace method
+                pass
+                
+        # Add other field comparisons based on what's available in both products
+        # This makes the comparison system work for different product types
+        numeric_fields = ["ram_gb", "storage_gb", "screen_size_inches"]
+        for field in numeric_fields:
+            if field in product1 and field in product2:
+                try:
+                    val1 = float(product1[field])
+                    val2 = float(product2[field])
+                    comparison_highlights[f"{field}_difference"] = abs(val1 - val2)
+                except (ValueError, TypeError):
+                    # Skip fields that can't be converted to numbers
+                    pass
+        
+        comparison_data["comparison"] = comparison_highlights
+        return comparison_data
     
     except Exception as e:
-        return {"error": f"Error comparing laptops: {str(e)}"} 
+        return {"error": f"Error comparing {PRODUCT_TYPE} items: {str(e)}"} 

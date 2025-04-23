@@ -36,18 +36,6 @@ export default function DisplayArea() {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-start rounded-lg border border-gray-200 bg-gray-50/25 p-4">
-      {latestComponent && (
-        <div className="w-full flex justify-end mb-2">
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={clearDisplayComponentStreams}
-          >
-            Clear
-          </Button>
-        </div>
-      )}
-      
       <div className="w-full flex-1 overflow-y-auto">
         {latestComponent ? (
           <div className="w-full">

@@ -21,7 +21,7 @@ interface AgentResponse {
 
 export default function Chat() {
   const actions = useActions<typeof EndpointsContext>();
-  const { addDisplayComponentStream } = useDisplay();
+  const { addDisplayComponentStream, clearDisplayComponentStreams } = useDisplay();
   const messageContainerRef = useRef<HTMLDivElement>(null);
   const [isAtBottom, setIsAtBottom] = useState(true);
   const [shouldScroll, setShouldScroll] = useState(true); // Flag to force scroll on new message
@@ -142,11 +142,11 @@ export default function Chat() {
       // Clear the frontend chat display and history state
       setElements([]);
       setHistory([]);
-      // Optionally clear the display area if needed
-      // addDisplayComponentStream(null); // Or create a streamable value and set it to null
-      console.log("Chat history reset.");
+      // Clear the display area
+      clearDisplayComponentStreams();
+      console.log("Chat history and display area reset.");
     } catch (error) {
-      console.error("Failed to reset chat history:", error);
+      console.error("Failed to reset chat:", error);
       // Optionally show an error message to the user
     }
   }

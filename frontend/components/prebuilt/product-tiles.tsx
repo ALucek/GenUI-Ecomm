@@ -2,25 +2,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-
-interface ProductTileData {
-  product_id: string;
-  name: string;
-  brand: string;
-  price: string;
-  ram_gb: string;
-  storage_gb: string;
-  storage_type: string;
-  screen_size_inches: string;
-  cpu_family: string;
-  marketing_link: string;
-  has_image: boolean;
-  image_url: string | null;
-}
+import { Fragment } from "react";
+import { currentConfig, formatFieldLabel, formatFieldValue } from "./config";
 
 interface ProductTilesData {
   title: string;
-  products: ProductTileData[];
+  products: any[];
   warning?: string;
   error?: string;
 }
@@ -60,6 +47,13 @@ export function ProductTilesLoading() {
 }
 
 export function ProductTiles({ title, products, warning, error }: ProductTilesData) {
+  // Get badge fields from config that exist in the first product
+  const badgeFieldsToShow = products.length > 0
+    ? currentConfig.badgeFields.filter(
+        field => field in products[0]
+      )
+    : [];
+
   if (error) {
     return (
       <Card className="w-full max-w-6xl mx-auto my-4">
@@ -102,11 +96,12 @@ export function ProductTiles({ title, products, warning, error }: ProductTilesDa
                 <h3 className="text-md font-bold line-clamp-2">{product.name}</h3>
                 <p className="text-sm text-muted-foreground">{product.brand}</p>
                 <p className="text-md font-semibold text-primary mt-1">{product.price}</p>
-                
-                <div className="flex flex-wrap gap-1 mt-3">
-                  <Badge variant="outline" className="text-xs">{product.ram_gb}GB</Badge>
-                  <Badge variant="outline" className="text-xs">{product.storage_gb}GB {product.storage_type}</Badge>
-                  <Badge variant="outline" className="text-xs">{product.screen_size_inches}"</Badge>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  {badgeFieldsToShow.map(field => (
+                    <Badge key={field} variant="outline" className="text-xs">
+                      {formatFieldValue(field, product[field])}
+                    </Badge>
+                  ))}
                 </div>
               </CardContent>
               <CardFooter className="p-4 pt-0">

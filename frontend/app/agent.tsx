@@ -3,8 +3,8 @@ import { exposeEndpoints, streamRunnableUI } from "@/utils/server";
 import "server-only";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 import { EventHandlerFields } from "@/utils/server";
-import { Laptop, LaptopLoading } from "@/components/prebuilt/laptop";
-import { ProductComparison, ProductComparisonLoading } from "@/components/prebuilt/product-comparison";
+import { ProductDetail, ProductDetailLoading } from "@/components/prebuilt/product-detail";
+import { Comparison, ComparisonLoading } from "@/components/prebuilt/product-comparison";
 import { ProductTiles, ProductTilesLoading } from "@/components/prebuilt/product-tiles";
 import { createStreamableUI, createStreamableValue } from "ai/rsc";
 import { AIMessage } from "@/ai/message";
@@ -21,13 +21,13 @@ type ToolComponentMap = {
 };
 
 const TOOL_COMPONENT_MAP: ToolComponentMap = {
-  "laptop-product": {
-    loading: (props?: any) => <LaptopLoading {...props} />,
-    final: (props?: any) => <Laptop {...props} />,
+  "product-details": {
+    loading: (props?: any) => <ProductDetailLoading {...props} />,
+    final: (props?: any) => <ProductDetail {...props} />,
   },
   "product-comparison": {
-    loading: (props?: any) => <ProductComparisonLoading {...props} />,
-    final: (props?: any) => <ProductComparison {...props} />,
+    loading: (props?: any) => <ComparisonLoading {...props} />,
+    final: (props?: any) => <Comparison {...props} />,
   },
   "product-tiles": {
     loading: (props?: any) => <ProductTilesLoading {...props} />,

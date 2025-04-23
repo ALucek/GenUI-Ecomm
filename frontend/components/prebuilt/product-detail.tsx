@@ -2,30 +2,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
+import { currentConfig, formatFieldLabel, formatFieldValue } from "./config";
 
-interface LaptopData {
-  product_id: string;
-  name: string;
-  brand: string;
-  cpu_family: string;
-  ram_gb: string;
-  storage_gb: string;
-  storage_type: string;
-  screen_size_inches: string;
-  screen_resolution: string;
-  screen_type: string;
-  graphics_card: string;
-  battery_life_hours: string;
-  weight_kg: string;
-  price: string;
-  marketing_link: string;
-  datasheet_link: string;
-  has_image: boolean;
-  image_url: string | null;
-  error?: string;
+interface ProductDetailData {
+  [key: string]: any;
 }
 
-export function LaptopLoading() {
+export function ProductDetailLoading() {
   return (
     <Card className="w-full max-w-4xl mx-auto my-4">
       <CardHeader className="space-y-2">
@@ -52,17 +35,38 @@ export function LaptopLoading() {
   );
 }
 
-export function Laptop({ product_id, name, brand, cpu_family, ram_gb, storage_gb, storage_type, screen_size_inches, screen_resolution, screen_type, graphics_card, battery_life_hours, weight_kg, price, marketing_link, datasheet_link, has_image, image_url, error }: LaptopData) {
+export function ProductDetail(props: ProductDetailData) {
+  const { error } = props;
+  
   if (error) {
     return (
       <Card className="w-full max-w-4xl mx-auto my-4">
         <CardHeader>
-          <CardTitle className="text-red-500">Error Loading Laptop</CardTitle>
+          <CardTitle className="text-red-500">Error Loading Product Details</CardTitle>
           <CardDescription>{error}</CardDescription>
         </CardHeader>
       </Card>
     );
   }
+
+  // Extract core fields used in the header
+  const name = props.name;
+  const brand = props.brand;
+  const price = props.price;
+  const marketing_link = props.marketing_link;
+  const datasheet_link = props.datasheet_link;
+  const has_image = props.has_image;
+  const image_url = props.image_url;
+  
+  // Get detail fields to display from config, excluding any missing fields
+  const detailFieldsToShow = currentConfig.detailFields.filter(
+    field => field in props && !['name', 'brand', 'price'].includes(field)
+  );
+
+  // Get badge fields to display from config
+  const badgeFieldsToShow = currentConfig.badgeFields.filter(
+    field => field in props
+  );
 
   return (
     <Card className="w-full max-w-4xl mx-auto my-4">
@@ -102,48 +106,27 @@ export function Laptop({ product_id, name, brand, cpu_family, ram_gb, storage_gb
             </div>
           )}
         </div>
-        
         <div className="md:col-span-2 space-y-4">
-          <div className="space-y-1">
-            <div className="grid grid-cols-2 gap-x-2 gap-y-3">
-              <div>
-                <p className="text-sm text-gray-500">Processor</p>
-                <p className="font-medium">{cpu_family}</p>
+          <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+            {detailFieldsToShow.map(field => (
+              <div key={field}>
+                <p className="text-sm text-gray-500">
+                  {formatFieldLabel(field)}
+                </p>
+                <p className="font-medium">{props[field]}</p>
               </div>
-              <div>
-                <p className="text-sm text-gray-500">Memory</p>
-                <p className="font-medium">{ram_gb} GB</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500">Storage</p>
-                <p className="font-medium">{storage_gb} GB {storage_type}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500">Graphics</p>
-                <p className="font-medium">{graphics_card}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500">Display</p>
-                <p className="font-medium">{screen_size_inches}" {screen_type}</p>
-                <p className="text-sm">{screen_resolution}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500">Weight</p>
-                <p className="font-medium">{weight_kg} kg</p>
-              </div>
-            </div>
+            ))}
           </div>
-          
           <div className="flex flex-wrap gap-2 pt-2">
-            <Badge variant="secondary">{screen_size_inches}" Display</Badge>
-            <Badge variant="secondary">{ram_gb}GB RAM</Badge>
-            <Badge variant="secondary">{storage_gb}GB {storage_type}</Badge>
-            {battery_life_hours && <Badge variant="secondary">{battery_life_hours}</Badge>}
+            {badgeFieldsToShow.map(field => (
+              <Badge key={field} variant="secondary">
+                {formatFieldValue(field, props[field])}
+              </Badge>
+            ))}
           </div>
-          
           <div className="pt-2">
-            <a 
-              href={datasheet_link} 
+            <a
+              href={datasheet_link}
               target="_blank" 
               rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-700 text-sm underline"

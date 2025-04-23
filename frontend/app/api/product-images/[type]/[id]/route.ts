@@ -4,17 +4,17 @@ import fs from 'fs';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { type: string, id: string } }
 ) {
-  const id = params.id;
+  const { type, id } = params;
   
-  // Define path to the image
-  // Adjust this path to point to wherever your images are stored relative to the API route
-  const imagePath = path.join(process.cwd(), '..', 'backend', 'laptops', 'images', `${id}.jpg`);
+  // Define path to the image based on product type
+  const imagePath = path.join(process.cwd(), '..', 'backend', type, 'images', `${id}.jpg`);
   
   try {
     // Check if the file exists
     if (!fs.existsSync(imagePath)) {
+      console.error(`Image not found at path: ${imagePath}`);
       return new NextResponse('Image not found', { status: 404 });
     }
     
@@ -32,4 +32,4 @@ export async function GET(
     console.error('Error serving image:', error);
     return new NextResponse('Error serving image', { status: 500 });
   }
-} 
+}
