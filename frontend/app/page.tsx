@@ -1,21 +1,18 @@
 import Chat from "@/components/prebuilt/chat";
+import DisplayArea from "@/components/prebuilt/display-area";
+import { DisplayProvider } from "@/utils/display-context";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center justify-between px-24">
-      <div className="w-full min-w-[600px] flex flex-col gap-4">
-        <p className="text-[28px] text-center font-medium">
-          Generative UI with{" "}
-          <a
-            href="https://github.com/langchain-ai/langchainjs"
-            target="_blank"
-            className="text-blue-600 hover:underline hover:underline-offset-2"
-          >
-            LangChain Python 🦜🔗
-          </a>
-        </p>
-        <Chat />
-      </div>
-    </main>
+    <DisplayProvider>
+      <main className="flex h-screen w-full overflow-hidden">
+        <div className="w-1/3 min-w-[300px] border-r border-gray-200 p-4 h-full overflow-hidden">
+          <Chat />
+        </div>
+        <div className="w-2/3 p-4 h-full overflow-hidden">
+          <DisplayArea />
+        </div>
+      </main>
+    </DisplayProvider>
   );
 }

@@ -3,7 +3,7 @@ import { AIProvider } from "./client";
 import { ReactNode } from "react";
 import { Runnable } from "@langchain/core/runnables";
 import { CompiledStateGraph } from "@langchain/langgraph";
-import { createStreamableUI, createStreamableValue } from "ai/rsc";
+import { createStreamableUI, createStreamableValue, StreamableValue } from "ai/rsc";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 
 export const LAMBDA_STREAM_WRAPPER_NAME = "lambda_stream_wrapper";
@@ -12,10 +12,14 @@ export type RunUICallbacks = Record<
   string,
   ReturnType<typeof createStreamableUI | typeof createStreamableValue>
 >;
+
+// The EventHandlerFields type now includes the displayComponent which is used to update the UI
 export type EventHandlerFields = {
   ui: ReturnType<typeof createStreamableUI>;
+  displayComponent: ReturnType<typeof createStreamableValue<ReactNode | null>>;
   callbacks: RunUICallbacks;
 };
+
 export type EventHandler =
   | ((event: StreamEvent, fields: EventHandlerFields) => void)
   | ((event: StreamEvent, fields: EventHandlerFields) => Promise<void>);
@@ -37,6 +41,7 @@ export function streamRunnableUI<RunInput, RunOutput>(
   },
 ) {
   const ui = createStreamableUI();
+  const displayComponent = createStreamableValue<ReactNode | null>(null);
   const [lastEvent, resolve] = withResolvers<
     Array<any> | Record<string, any>
   >();
@@ -54,6 +59,7 @@ export function streamRunnableUI<RunInput, RunOutput>(
       for await (const handler of options.eventHandlers) {
         await handler(streamEvent, {
           ui,
+          displayComponent,
           callbacks,
         });
       }
@@ -75,9 +81,10 @@ export function streamRunnableUI<RunInput, RunOutput>(
     resolve(resolveValue);
     Object.values(callbacks).forEach((cb) => cb.done());
     ui.done();
+    displayComponent.done();
   })();
 
-  return { ui: ui.value, lastEvent };
+  return { ui: ui.value, lastEvent, displayComponent: displayComponent.value };
 }
 
 /**

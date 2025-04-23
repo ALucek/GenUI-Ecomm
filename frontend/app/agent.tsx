@@ -3,12 +3,9 @@ import { exposeEndpoints, streamRunnableUI } from "@/utils/server";
 import "server-only";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 import { EventHandlerFields } from "@/utils/server";
-import { Github, GithubLoading } from "@/components/prebuilt/github";
-import { InvoiceLoading, Invoice } from "@/components/prebuilt/invoice";
-import {
-  CurrentWeatherLoading,
-  CurrentWeather,
-} from "@/components/prebuilt/weather";
+import { Laptop, LaptopLoading } from "@/components/prebuilt/laptop";
+import { ProductComparison, ProductComparisonLoading } from "@/components/prebuilt/product-comparison";
+import { ProductTiles, ProductTilesLoading } from "@/components/prebuilt/product-tiles";
 import { createStreamableUI, createStreamableValue } from "ai/rsc";
 import { AIMessage } from "@/ai/message";
 
@@ -24,17 +21,17 @@ type ToolComponentMap = {
 };
 
 const TOOL_COMPONENT_MAP: ToolComponentMap = {
-  "github-repo": {
-    loading: (props?: any) => <GithubLoading {...props} />,
-    final: (props?: any) => <Github {...props} />,
+  "laptop-product": {
+    loading: (props?: any) => <LaptopLoading {...props} />,
+    final: (props?: any) => <Laptop {...props} />,
   },
-  "invoice-parser": {
-    loading: (props?: any) => <InvoiceLoading {...props} />,
-    final: (props?: any) => <Invoice {...props} />,
+  "product-comparison": {
+    loading: (props?: any) => <ProductComparisonLoading {...props} />,
+    final: (props?: any) => <ProductComparison {...props} />,
   },
-  "weather-data": {
-    loading: (props?: any) => <CurrentWeatherLoading {...props} />,
-    final: (props?: any) => <CurrentWeather {...props} />,
+  "product-tiles": {
+    loading: (props?: any) => <ProductTilesLoading {...props} />,
+    final: (props?: any) => <ProductTiles {...props} />,
   },
 };
 
@@ -57,7 +54,7 @@ async function agent(inputs: {
   /**
    * Handles the 'invoke_model' event by checking for tool calls in the output.
    * If a tool call is found and no tool component is selected yet, it sets the
-   * selected tool component based on the tool type and appends its loading state to the UI.
+   * selected tool component based on the tool type and updates the display component stream.
    *
    * @param output - The output object from the 'invoke_model' event
    */
@@ -82,19 +79,32 @@ async function agent(inputs: {
       const toolCall = event.data.output.tool_calls[0];
       if (!selectedToolComponent && !selectedToolUI) {
         selectedToolComponent = TOOL_COMPONENT_MAP[toolCall.type];
-        selectedToolUI = createStreamableUI(selectedToolComponent.loading());
-        fields.ui.append(selectedToolUI?.value);
+        
+        // Create streamable UI for internal tracking if needed, but don't append to chat
+        selectedToolUI = createStreamableUI();
+        
+        // Update the dedicated display component stream with the loading state
+        fields.displayComponent.update(selectedToolComponent.loading());
+        
+        // Add a message to the chat indicating a tool is being used
+        const toolMessage = createStreamableValue();
+        toolMessage.append(`Using ${toolCall.type} tool...`);
+        toolMessage.done();
+        fields.ui.append(<AIMessage value={toolMessage.value} />);
       }
     }
   };
 
   /**
-   * Handles the 'invoke_tools' event by updating the selected tool's UI
+   * Handles the 'invoke_tools' event by updating the tool's display stream
    * with the final state and tool result data.
    *
    * @param output - The output object from the 'invoke_tools' event
    */
-  const handleInvokeToolsEvent = (event: StreamEvent) => {
+  const handleInvokeToolsEvent = (
+    event: StreamEvent,
+    fields: EventHandlerFields,
+  ) => {
     const [type] = event.event.split("_").slice(2);
     if (
       type !== "end" ||
@@ -105,9 +115,16 @@ async function agent(inputs: {
       return;
     }
 
-    if (selectedToolUI && selectedToolComponent) {
+    if (selectedToolComponent) {
       const toolData = event.data.output.tool_result;
-      selectedToolUI.done(selectedToolComponent.final(toolData));
+      
+      // Update the display area stream with the final component
+      fields.displayComponent.update(selectedToolComponent.final(toolData));
+      
+      // If we had a streamable UI for internal tracking, mark it done
+      if (selectedToolUI) {
+        selectedToolUI.done();
+      }
     }
   };
 

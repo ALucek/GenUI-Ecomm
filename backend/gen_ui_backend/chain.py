@@ -8,9 +8,9 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from langgraph.graph.graph import CompiledGraph
 
-from gen_ui_backend.tools.github import github_repo
-from gen_ui_backend.tools.invoice import invoice_parser
-from gen_ui_backend.tools.weather import weather_data
+from gen_ui_backend.tools.laptops import laptop_product
+from gen_ui_backend.tools.product_comparison import product_comparison
+from gen_ui_backend.tools.product_tiles import product_tiles
 
 
 class GenerativeUIState(TypedDict, total=False):
@@ -29,14 +29,20 @@ def invoke_model(state: GenerativeUIState, config: RunnableConfig) -> Generative
         [
             (
                 "system",
-                "You are a helpful assistant. You're provided a list of tools, and an input from the user.\n"
-                + "Your job is to determine whether or not you have a tool which can handle the users input, or respond with plain text.",
+                "You are a helpful laptop shopping assistant. You're provided a list of tools, and an input from the user.\n"
+                + "Your job is to help users find information about laptops in our catalog. You can use these tools:\n"
+                + "1. The laptop-product tool to retrieve detailed information about a specific laptop model.\n" 
+                + "2. The product-comparison tool to compare two laptops side-by-side.\n"
+                + "3. The product-tiles tool to display multiple laptops (1-N) as a grid of simple tiles with basic information.\n"
+                + "The available laptop product IDs are 1-10, where each ID represents a different laptop model.\n"
+                + "When the user is asking about multiple laptops or browsing options, use the product-tiles tool to show them several options at once.\n"
+                + "If the user's query doesn't relate to laptops in our catalog, respond with plain text.",
             ),
             MessagesPlaceholder("input"),
         ]
     )
     model = ChatOpenAI(model="gpt-4o", temperature=0, streaming=True)
-    tools = [github_repo, invoice_parser, weather_data]
+    tools = [laptop_product, product_comparison, product_tiles]
     model_with_tools = model.bind_tools(tools)
     chain = initial_prompt | model_with_tools
     result = chain.invoke({"input": state["input"]}, config)
@@ -62,9 +68,9 @@ def invoke_tools_or_return(state: GenerativeUIState) -> str:
 
 def invoke_tools(state: GenerativeUIState) -> GenerativeUIState:
     tools_map = {
-        "github-repo": github_repo,
-        "invoice-parser": invoice_parser,
-        "weather-data": weather_data,
+        "laptop-product": laptop_product,
+        "product-comparison": product_comparison,
+        "product-tiles": product_tiles,
     }
 
     if state["tool_calls"] is not None:

@@ -1,0 +1,260 @@
+Tech Specs
+Processor
+Intel® Core™ Ultra 9 185H (24 MB cache, 16 cores, 2.30 GHz to 5.10 GHz P-Core Turbo)
+
+Operating System
+Windows 11 Home, English, French, Spanish
+
+Graphics Card
+NVIDIA® GeForce RTX™ 4060, 8 GB GDDR6
+
+Display
+16", QHD+ 2560x1600, 240Hz, 100% sRGB, 3ms, Advanced Optimus, ComfortView Plus, NVIDIA G-SYNC
+
+Memory 
+16GB, 2x8GB, DDR5, 5600 MT/s
+
+Storage
+1 TB, M.2, PCIe NVMe, SSD
+
+Case
+Dark Metallic Moon
+
+Microsoft Office
+Activate Your Microsoft 365 For A 30 Day Trial
+
+Home and Small Business Security Solutions
+No anti-virus software
+
+Protect your purchase - View Support offers below 
+1Y Basic Onsite Service after remote diagnosis with Hardware-Only Support
+
+Accidental Damage Service
+None
+
+Keyboard
+English US AlienFX RGB backlit (per-key) Alienware M Series keyboard
+
+Ports
+1 Type-A USB 3.2 Gen 1 Port with PowerShare
+1 Type-A USB 3.2 Gen 1 Port
+1 Type-C Port (Includes Thunderbolt™ 4.0, USB 3.2 Gen 2, DisplayPort 1.4 (iGPU) and 15W Power Delivery (3A/5V) capabilities)
+1 Type-C Port (USB 3.2 Gen 2, DisplayPort 1.4 (dGPU))
+1 HDMI 2.1 (dGPU) Output port
+1 Power/DC-in port
+1 RJ45 Ethernet port (2.5 Gb Upsell)
+1 Global Headset Jack
+
+Slots
+1 MicroSD card slot
+
+Dimensions & Weight
+Height: 0.93 in. (23.50 mm)
+Width: 14.33 in. (363.90 mm)
+Depth: 9.81 in. (249.40 mm)
+Maximum weight: 5.75 lb (2.61 kg)
+
+Camera
+1080p at 30 fps FHD RGB+IR camera
+Dual-array microphones
+
+Audio and Speakers
+Stereo speakers, 2 W x 2 = 4 W total
+Realtek ALC3254
+
+Chassis
+Color Options
+Dark Metallic Moon
+
+Customized Features
+Alienware Command Center
+AlienFX Lighting Technology
+Game Library with auto-tune game profile functionality
+Fusion (Includes support for Overclock, Thermal, Power, Audio, and Audio Recon profiles)
+
+Touchpad
+Multi-touch gesture touchpad with integrated scrolling
+
+Wireless 
+Intel BE202 Wi-Fi 7 2x2 and BT 5.4 Wireless card
+
+Primary Battery
+90Wh Battery
+
+Power
+240W Small Form Factor Adapter
+
+Regulatory
+Product Safety and Environmental Datasheets
+Dell Regulatory Compliance Home Page
+Dell and the Environment
+
+How easy is it to compare and select options for this product?Rating is from 1-7, 1 being the most difficult and 7 being the easiest
+
+Very Difficult
+Very Easy
+Adaptable performance
+Keep a low profile or kick things up for performance gaming, streaming, and more with up to Intel® Core™ Ultra 9 processors and up to NVIDIA® GeForce RTX™ 4070 Laptop GPUs for a Total Performance Power of up to 175W[1], cooled by Alienware Cryo-tech™ thermal technology.
+m16 r2Play video about m16 r2Alienware Cryo-tech cooling with new architecture placement enables the latest CPU and GPU options to run mainstream games.
+Dell Alienware M16 R2 Gaming Laptop.
+Cooling Redesigned
+The internal layout has been re-engineered to take up less space, allowing the m16 R2 to have a 15% smaller footprint than the previous gen[2].
+Thoughtful placement of components allows for efficient airflow and cooling.
+Two fans with 94 ultra-thin fan blades move air through four copper heat pipes to ensure optimal performance.
+Intelligent performance
+Intel® Core™ Ultra processors integrate CPU, built-in GPU, and NPU into a single package designed for AI acceleration and balanced performance across your favorite things to do.
+CPU
+Ensures everything runs smoothly and as expected; like controlling non-player characters, calculating realistic physics, translating a button press into an action, and triggering sound effects at the right time in the game.
+NPU
+Uses AI with compatible livestreaming software to remove your background thus offloading this performance demand from the CPU or GPU.
+iGPU
+Delivers graphics rendering capabilities and imagery editing power at home and on the go.
+Dell Alienware M16 R2 Gaming Laptop.
+Faster performance, longer battery life[3]
+When compared to similar Alienware laptops since 2021, the m16 R2 with Intel® Core™ Ultra Series processors delivers up to:
+50%
+improved CPU performance[4].
+2.9x
+longer HD video playback[5].
+Immersive graphics
+Experience breathtaking, awe-inspiring visuals with NVIDIA® GeForce RTX™ 40 Series Laptop GPUs.
+Dell Alienware M16 R2 Gaming Laptop.
+Incredible performance boosts
+A revolutionary breakthrough in AI-powered graphics that massively boosts performance. Powered by the new GeForce RTX™ 40 Series Laptop GPUs, DLSS 3 uses AI to create additional high-quality frames.
+Framework for speed
+With Ada Lovelace architecture, GeForce RTX™ 40 Series Laptop GPUs are engineered to run games better than ever with improved AI performance, power efficiency and ray tracing capabilities.
+Life-like lighting
+Experience complex lighting, and the most realistic in-game environments imaginable thanks to dedicated Ray Tracing  Cores in GeForce RTX™ graphics.
+Effortless streaming
+Turn your room into a home studio. Add cutting-edge AI features like virtual background, noise removal, and eye contact powered by NVIDIA Broadcast technology.
+Optimized power and performance
+NVIDIA® Max-Q is a suite of technologies that includes Resizable Bar, which enables the CPU to access the entire GPU frame buffer at once, improving in-game performance
+Legend perfected
+Dell Alienware M16 R2 Gaming Laptop.
+Down to the last detail, the Legend 3 design is more premium, tactile and futuristic than ever.
+
+The iconic shape now features soft edges and a reduced Y dimension, making the m16 R2 easier to hold for easy portability.
+
+A high-quality finish, resulting from bead-blast anodized aluminum and a dark two-tone block, adds to the elevated look.
+
+Dell Alienware M16 R2 Gaming Laptop.
+Form
+The stadium shape is ergonomically designed for comfortable daily use and the thermal shelf was removed for enhanced mobility with plenty of thermal support for performance.
+Dell Alienware M16 R2 Gaming Laptop.
+Function
+The V-rail edges allow for a quick, easy opening and more comfortable palm rest — while a new, elevated perimeter foot design enables improved airflow for higher overall performance.
+Dell Alienware M16 R2 Gaming Laptop.
+Quality
+Anodized aluminum in Dark Metallic Moon color offers a remarkably premium look and feel.
+Stealth Mode FeaturePlay video about Stealth Mode FeatureF2 hotkey is pressed to activate the stealth mode feature, going from gaming RGB lights to regular mode.
+Stealth mode activated
+Made for performance and designed to take anywhere, the m16 R2 features a "Stealth Mode," giving you the ability to turn off the RGB lighting and switch the performance to Quiet Mode[6] for more covert tasks simply by pressing FN + F2.
+Vivid visuals
+Dell Alienware M16 R2 Gaming Laptop.
+Increase your vertical field of view thanks to a 16-inch display with a 16:10 aspect ratio.
+
+FHD camera features IR for facial recognition and HDR for clear camera performance in a variety of lighting conditions.
+
+QHD+ resolution and up to 240Hz refresh rate provides dynamic visuals for gaming, videos and more.
+
+Ready to game and more
+Dell Alienware M16 R2 Gaming Laptop.
+Fast boot times and multi-task with ease
+Supporting up to 8TB[7] of storage, you'll have more of your games on hand. Plus, the lightning-fast boot times enabled by up to two M.2 SSD slots get you into your games quickly.
+
+Run multiple heavy processes simultaneously as you play intensive games with dual channel DDR5 memory up to 64GB at 5600MHz.[8]
+Dell Alienware M16 R2 Gaming Laptop. 
+Ready to connect
+The m16 R2 is Wi-Fi 7-ready[9] to take advantage of fast transfer speeds, reduced latency and increased throughput ideal for activities like cloud-based gaming, simultaneous video conferencing and streaming, and more, even with multiple devices using network.
+Total command
+Control more than ever with Alienware Command Center 6.
+
+Learn More
+Alienware Command Center
+Convenient presets
+Maximize your gameplay with performance presets for the power you need, no matter what you're doing.
+Performance overlay
+Manage and see CPU, GPU, memory and thermals stats without exiting the game.
+AlienFX
+Customize your set up with lighting settings that extend to all your Alienware accessories, as well as keybinds and calibration.
+AlienVision
+Toggle external Alienware monitor hardware-based overlays on/off to help you focus on the targets at hand.
+
+Alienware Elite Care
+
+Next-Level Gaming Support
+
+
+
+Support Essential
+
+
+
+SupportAssist Technology
+
+
+
+
+Make everyday easier
+Windows 11 comes with a modern design and multitasking tools[13] to help you make everyday easier.
+
+Learn More
+
+Copilot in Windows
+Your own personal AI Assistant built right in to do the heavy lifting so you can do the extraordinary. To access, select the new button on the taskbar to launch Copilot[14] in Windows, or press the Windows Key + C. Get real answers, inspiration and solutions at your fingertips.
+
+All for play, play for all
+Game with the graphics you need, with the people you want, with the peripherals you prefer on Windows 11. Discover compatibility with a wide range of games, including the latest releases, through PC Game Pass[15].
+
+Get your game on
+Play hundreds of PC games, and day one blockbusters with your new Alienware PC and one month of PC Game Pass — including EA play. With new games added all the time, there’s always something new to play[16].
+
+Ports and slots
+Right view
+
+MicroSD Card Slot
+Type-A USB 3.2 Gen 1 Port
+Type-A USB 3.2 Gen 1 with PowerShare Port
+Rear view
+
+Type-C Port (Includes Thunderbolt™ 4.0, USB 3.2 Gen 2, DisplayPort 1.4 (iGPU) and 15W Power Delivery (3A/5V) capabilities)
+Type-C Port (USB 3.2 Gen 2, DisplayPort 1.4 (dGPU)
+HDMI 2.1 (dGPU) Output Port
+Power/DC-in Port
+Left view
+
+RJ-45 Ethernet Port (2.5 GB)
+Global Headset Jack
+Dell Alienware M16 R2 Gaming Laptop with numbers from 1 to 3 showing the product dimensions and weight.
+Dimensions & Weights
+Height: 0.93 in. (23.50 mm)
+Width: 14.33 in. (363.90 mm)
+Depth: 9.81 in. (249.40 mm)
+
+Maximum weight: 5.75 lb (2.61 kg)[17]
+240W AC Adapter Weight: 1.85 lb (0.85 kg)
+
+Dell Alienware M16 R2 Gaming Laptop.
+Regulatory Product Compliance & Environmental
+Dell Technologies is committed to compliance with the laws and regulations in each country into which the company ships it's products. Dell products are designed and tested to meet the appropriate worldwide standards for Product Safety, Electromagnetic Compatibility, Ergonomics, and other regulatory compulsory requirements when used for their intended purpose.
+
+In addition, Dell products are developed with design for the environment in mind. Our environmental stewardship program drives conservation of product energy consumption, develops methods to reduce or eliminate materials for disposal, prolongs product life span, and provides effective and convenient equipment recovery solutions.
+
+For more information:
+Dell Regulatory Compliance Dell and the Environment Product Safety & Environmental Datasheets
+Reviews
+"TIME World’s Best Brands 2024" logo
+TIME - World's Best Brands 2024: Alienware
+Category: Gaming Hardware & Peripherals
+
+"engadget Best of 2025" logo
+Best of 2025: Alienware M16 R2
+"Best no-limit gaming laptop for schoolwork." — engadget
+
+"PCWorld Best of 2024" logo
+Best gaming laptop: Alienware M16 R2
+"The Alienware m16 R2 has everything you could ever want in a gaming laptop." — PCWorld
+
+Tom's Hardware logo
+Best Gaming Laptops 2024: Alienware M16 R2
+"Best Crossover Productivity/Gaming Laptop." — Tom's Hardware

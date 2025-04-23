@@ -1,0 +1,348 @@
+
+MacBook Pro
+OverviewTech SpecsCompareSwitch from PC to Mac
+BuyMacBook Pro
+Buy MacBook Pro with education savings.* Shop
+
+MacBook Pro
+Built for Apple Intelligence.
+
+Buy
+From $1599 or $133.25/mo. for 12 mo.**
+
+Get the highlights.
+Watch the announcement
+Watch in ASL
+Item 1 - Apple Intelligence
+Item 2 - Chips
+Item 3 - Battery
+Item 4 - Display
+Item 5 - Camera
+
+Built for Apple Intelligence.
+Personal, private, powerful.1M4, M4 Pro, and M4 Max.
+Ready for whatever’s impossible.
+Longest battery life ever in a Mac.
+Up to 24 hours.3Liquid Retina XDR display.
+Bright beyond belief.12MP Center Stage camera.
+Keeps you front and center.
+Take a closer look.
+MacBook Pro 16” in Space Black
+
+Silver
+
+Space Black
+
+Performance
+Pro all out.
+
+
+MacBook Pro features the most advanced lineup of chips ever built for a pro laptop. Phenomenal single- and multithreaded CPU performance, faster unified memory, enhanced machine learning accelerators — the M4 family of chips gives you the kind of speed and capability you’ve never thought possible. And the powerful Neural Engine makes AI tasks like image upscaling and video caption creation as well as on-device Apple Intelligence features fly.
+
+MacBook Pro with
+M4 is up to
+3.4x faster
+than M111
+MacBook Pro with
+M4 Pro is up to
+3x faster
+than M1 Pro12
+MacBook Pro with
+M4 Max is up to
+3.5x faster
+than M1 Max13
+Next-level graphics performance. Game on.
+
+Run graphics-intensive workflows with a responsiveness that keeps up with your imagination. The M4 family of chips features a GPU with a second-generation hardware-accelerated ray tracing engine that renders images faster, so gaming feels more immersive and realistic than ever. And Dynamic Caching optimizes fast on-chip memory to dramatically increase average GPU utilization — driving a huge performance boost for the most demanding pro apps and games.
+
+
+Go deeper on M4 chips
+Apple Intelligence.
+Genius at work.
+
+Apple Intelligence is the personal intelligence system that helps you write, express yourself, and get things done effortlessly. With groundbreaking privacy protections, it gives you peace of mind that no one else can access your data — not even Apple.1
+
+Learn more about Apple Intelligence
+
+Writing Tools
+Siri
+Priority Messages
+
+
+Text pop-up from Siri with information user was seeking about merging multiple PDFs.
+Showing Apple Intelligence feature Priority Messages in Mail app — time-sensitive emails are collected into one folder with summaries of the action they require, an open email requests review of design files today
+Writing Tools can proofread your text and rewrite different versions until the tone and wording are just right, and summarize selected text with a click.
+
+
+
+
+Great powers come with great privacy.
+Apple Intelligence is designed to protect your privacy at every step. It’s integrated into the core of your Mac through on-device processing. So it’s aware of your personal information without collecting your personal information.
+
+And with groundbreaking Private Cloud Compute, Apple Intelligence can draw on larger server-based models, running on Apple silicon, to handle more complex requests for you while protecting your privacy.
+
+Battery
+We can do this all day. And night.
+
+A person outside at night using a MacBook Pro on their lap, connected to a device on a tripod pointed toward the starry sky
+The new MacBook Pro has the longest battery life ever in a Mac — up to 24 hours — and supports fast charge, allowing it to charge up to 50 percent in just 30 minutes. 50 All models provide the same performance whether they’re plugged in or not, so you can spend more time thinking about an outlet for your passion, not your laptop.
+
+Up to
+24 hrs
+battery life3,6
+Up to
+14 more
+hours than Intel-based MacBook Pro5
+macOS
+Sharp as a Mac.
+
+Tens of thousands of apps are optimized to unlock the full capabilities of macOS — from your go-to productivity apps to your favorite games and hardest-working pro apps. And with the M4 family of chips, these apps just soar.
+
+Learn more about macOS
+
+Coding
+Photo editing
+STEM
+Business
+Graphic design
+3D animation and design
+Music production
+Video editing
+Gaming
+
+
+
+Xcode
+
+
+Adobe Lightroom
+
+
+MATLAB
+
+
+Keynote
+
+
+Adobe InDesign
+
+
+Blender
+
+
+Logic Pro
+
+
+DaVinci Resolve Studio
+
+
+Assassin’s Creed Shadows
+Get with the program. Run virtual machines and develop code across the stack. Save time with predictive code completion in Xcode.
+
+Xcode, Unity Editor, Create ML, TensorFlow, PyTorch, NAG Fortran Compiler, Docker, IntelliJ IDEA, and more.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mac + iPhone
+Better together.
+
+Demonstrating iPhone Mirroring, with iPhone display shown within MacBook Pro screen — user works on a presentation in Keynote app while an invitation to check in for a flight appears on the iPhone display
+
+iPhone Mirroring. See and use what’s on your iPhone from your Mac, without having to reach for it. You can also drag and drop files between devices.51
+
+
+Universal Clipboard. Copy text, images, photos, and videos on your iPhone and paste to your Mac — or vice versa.
+
+
+AirDrop. Wirelessly share photos, large files, and more between your iPhone, your Mac, and other nearby Apple devices. No Wi-Fi network required.
+
+Display
+See it all in a new light.
+
+A colorful image showcases the display's high resolution, brightness, and contrast
+Go from the sunniest terrace to the darkest studio with more ease than ever. The eye-popping Liquid Retina XDR display offers 1,600 nits peak HDR brightness and now provides up to 1,000 nits of brightness for SDR content in bright light so you can see what’s on your screen more clearly outside. In low-light situations, it dims to 1 nit so you can work comfortably in darker spaces.
+
+A person uses MacBook Pro with nano-texture display option outside, demonstrating the reduction in glare
+MacBook Pro with nano-texture display
+Standard display. Effortlessly read every word and see every vivid pixel thanks to an anti‑reflective coating.
+Nano-texture display. Choose this option to reduce glare and reflections in bright spaces — whether inside or out — while maintaining an excellent viewing experience.
+
+Dive into Liquid Retina XDR
+Cameras, Mics, and Speakers
+Make it a command performance.
+
+The 12MP Center Stage camera helps you look sharp in any light. Together with the advanced mics and speakers, it lets you take charge of the meeting from afar.
+
+Center Stage
+Desk View
+
+
+A video call using the Desk View feature, displaying a view of the user’s workspace
+Center Stage keeps you centered in the frame as you move around.
+
+
+
+Studio-quality three-mic array. Your voice comes through crystal clear on video calls and recordings, while background noise is minimized.
+
+
+Six-speaker sound system. Two pairs of force-cancelling woofers with two tweeters fill the room with bold, bass-rich sound. And Spatial Audio with support for Dolby Atmos creates an immersive sound experience.
+
+Ports and connectivity
+Make powerful connections.
+
+MacBook Pro packs an array of ports for connecting high-speed peripherals, driving high-resolution displays, or directly offloading SDXC cards. Models with the M4 Pro and M4 Max chips now include Thunderbolt 5, which offers transfer speeds of up to 120Gb/s.52
+
+MacBook Pro also supports both Wi-Fi 6E53 and Bluetooth 5.3 to connect to the internet and your wireless devices.
+
+Left side: MagSafe, two Thunderbolt ports, and headphone jack
+Right side: SDXC, one Thunderbolt port, and HDMI
+Thunderbolt54
+HDMI
+SDXC
+Headphone jack
+MagSafe
+Drive external displays. Connect up to two high-resolution external displays with M4 and M4 Pro, or up to four displays with M4 Max.
+
+Security
+No compromises.
+
+While browsing in Safari, a user is prompted to use Touch ID to sign into a website
+Security starts with Apple silicon and extends to the macOS architecture. This deep integration of hardware and software along with automatic software updates helps keep MacBook Pro stable and protected for the long term. The security architecture also powers features such as Touch ID, Find My, and advanced defenses that protect against viruses and malware.
+
+
+Touch ID. Unlock your Mac, sign in to apps, and make secure payments with your fingertip. The Secure Enclave keeps your fingerprint data safe.
+
+
+Find My. Locate your misplaced MacBook Pro and remotely lock or erase it if needed.
+
+
+FileVault. Encrypt and protect your files and data without having to think about it.
+
+There’s never been a better time to upgrade.
+Select your current MacBook Pro:
+
+Additional help
+
+13-inch Intel-based
+Here’s what you get with the new MacBook Pro.
+
+
+Fly through demanding tasks up to 9.8x faster.4
+
+
+A stunning Liquid Retina XDR display.
+
+
+Built for
+Apple Intelligence.
+
+
+Up to 14 more hours battery life.5 (Up to 24 hours total.)6
+
+Apple Trade In
+Get credit toward a new MacBook Pro when you trade in an eligible device.10
+
+See what your device is worth
+Designed to make a difference.
+What matters to you matters to Apple, too. From using more recycled content that minimizes environmental impact. To privacy protections that give you more control over your data. To creating built‑in features that make Mac accessible to all.
+
+
+MacBook Pro has a durable design, with 100 percent recycled aluminum in the enclosure.
+
+More on Apple and the environment
+
+Privacy is a fundamental human right. Which is why we design our products and services to protect it.
+
+More on Apple and privacy
+
+The best technology works for everyone. That’s why our products and services are inclusive by design.
+
+More on built-in accessibility features
+Why Apple is the best place to buy Mac.
+Shop Mac
+
+Pay over time,
+interest-free.
+When you choose to check out with Apple Card Monthly Installments.◊
+
+
+
+Save with Apple Trade In.
+Get credit toward your next Mac when you trade in an eligible device.10
+
+
+
+Save with education pricing.
+Students and educators can save exclusively through the Apple Store.*
+
+
+
+Customize your Mac.
+Choose your chip, memory, storage, even color.
+
+
+
+Get flexible delivery and easy pickup.
+Choose from two-hour delivery from an Apple Store, free delivery, or easy pickup options.
+
+
+
+Shop live with a Specialist.
+Let us guide you live over video and answer all of your questions.
+
+
+
+Meet your new Mac with Personal Setup.
+Jump into online sessions with a Specialist to set up your Mac and discover new features.
+
+
+
+Explore a shopping experience designed around you.
+Use the Apple Store app to get a more personal way to shop.
+
+
+
+
+Keep exploring Mac.
+Help me choose, the best mac
+Explore all Mac models
+New
+MacBook Air 13” and 15”
+
+M4 chip
+
+MacBook Air 13 inch and 15 inch
+Available in Sky Blue, Silver, Starlight, and Midnight
+Strikingly thin and fast so you can work, play, or create anywhere.
+
+From $999 or $83.25/mo. for 12 mo.**
+
+Learn more Buy
+
+Apple M4 chip
+
+
+Apple Intelligence1
+
+Up to
+18 hrs
+battery life55
+4 ports
+2x Thunderbolt 4 (USB-C), headphone jack, MagSafe
+MacBook Pro 14” and 16”
+
+M4, M4 Pro, or M4 Max chip

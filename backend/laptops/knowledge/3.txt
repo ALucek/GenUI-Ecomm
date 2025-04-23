@@ -1,0 +1,64 @@
+Framework Laptop 16
+Powered by AMD Ryzen™ 7040HS and Radeon™ RX 7700S
+Upgradeable, modular graphics
+A high-performance laptop with upgradeable, modular, latest-generation graphics. Swap and upgrade peripherals independently of the rest of the laptop, including generation over generation discrete GPUs. The AMD Radeon™ RX 7700S Graphics Module with 8GB of GDDR6 enables intense gaming and creativity applications. If you want a thinner and lighter system, you can switch to an Expansion Bay Shell and use the impressive integrated graphics capabilities of Ryzen 7040 Series.
+
+laptop modular graphics
+Fully customizable input
+Numpad or no numpad? The choice is yours. With hot-swappable Input Modules, you can center or offset your selected keyboard, as well as choose between a Numpad, RGB Macropad, Spacers in a range of colors, or LED Matrix Modules. The Input Modules perform well too, with NKRO, open source QMK firmware, 1.5mm key travel and both white backlit and per-key RGB keyboard options. We've opened the Input Module system up to developers, enabling an entire world of custom input options beyond what we've created.
+
+input swap laptop 16
+Choose your ports
+External adapters are a thing of the past. The Framework Expansion Card system lets you choose exactly the ports you want and where you want them. With six slots, you can select from USB-C, USB-A, HDMI, DisplayPort, MicroSD, Ethernet, Audio, ultra fast storage, and more. You can charge through either side of the machine too, with support for up to 240W USB-C power adapters.
+
+ports still
+The AMD Advantage
+AMD Advantage laptops combine Ryzen™ processors, Radeon™ graphics, and smart technologies like AMD FreeSync Premium display for a seamless high-performance gaming and creativity experience with fantastic power efficiency.
+
+AMD Ryzen mainboard
+Upgradeable, high-performance Mainboard
+Equipped with AMD Ryzen™ 7040HS processors with up to 8 CPU cores and capable integrated Radeon™ 780M graphics, the Framework Laptop 16 Mainboard offers incredible performance and power efficiency, along with the flexibility to upgrade to new CPU generations if you ever need a boost in the future.
+
+mainboard laptop 16
+Efficient, high-throughput cooling
+The Framework Laptop 16 leverages a thermal system developed in collaboration with Cooler Master, with a Honeywell PTM7958 phase change thermal interface, three heatpipes, and two fans that keep CPU performance stable and quiet. The unique fan system is contained within the Expansion Bay Modules. With the Graphics Module you have two 75x75x11.5mm fans, while the Expansion Bay Shell contains thinner 75x75x8.2mm fans. Building the fan system into the Expansion Bay modules allow for design flexibility to handle generation over generation changes in thermal requirements for GPUs.
+
+cooler master laptop 16
+Thoughtfully designed
+Thin, light, and durable. We crafted the Framework Laptop 16 chassis from high performance materials like thixomolded magnesium alloy and machined aluminum. The laptop comes in under 18mm thick and 2.1kg, extending to 2.4kg and under 21mm at the rear section with the Graphics Module attached. Framework Laptops are designed to be opened. We put just as much care into creating an intuitive and welcoming internal design with captive fasteners, clear labels, and QR codes, making customization and repair effortless.
+
+close-up sideview laptop 16
+A display for work and play
+The Framework Laptop 16 has a display excellent for gaming, creation, and general productivity, simultaneously delivering 2560x1600 resolution, a 100% DCI-P3 color gamut, variable refresh rate up to 165Hz, 9ms rise+fall time, 1500:1 contrast, and an unusually high 500 nit brightness.
+
+laptop 16 open
+Operating system
+Pre-built configurations come with Windows pre-installed and ready to go. With our DIY Edition, the choice is up to you - configure with Windows or bring your own OS. We've tested for compatibility with the most popular Linux distributions and written step-by-step set up guides for them.
+
+
+Make it yours
+Electronics products don't need to be one size fits all. The magnet-attach bezel is easy to change and comes in a range of colors.
+
+bezel swap
+Load up on memory and storage
+With two DDR5 SO-DIMM sockets, and M.2 2280 and M.2 2230 NVMe sockets, all models are upgradeable to an insane 64GB of memory and 10TB of storage. With DIY Edition, you can bring your own if you prefer. You can scale up further with a Dual M.2 Storage Expansion Bay Card or 1TB Expansion Cards too.
+
+memory and storage
+Privacy
+Built-in hardware privacy switches give you complete control over access to the camera and microphones. Our embedded controller firmware is fully open source, and we don’t preload any extra software. You can even install a privacy focused OS on a Storage Expansion Card and take it with you.
+
+privacy
+Transparency
+Every part of the Framework Laptop 16 has a scannable QR code, giving you unprecedented access to documentation, repair guides, replacement and upgrade parts, and insight into design and manufacturing data.
+
+
+Planet-friendly
+The single best way to reduce the environmental impact of electronics is to make them last longer. You can repair and upgrade the Framework Laptop 16 to last as long as you need it to. Made with 90% post-industrial recycled magnesium aluminum bottom cover, 75% post-industrial recycled aluminum top cover, an average of 30% post-consumer recycled plastic content, and 100% recyclable materials for packaging. All shipments are fully carbon-offset, and you can buy carbon capture and sequestration in the Framework Marketplace to make your laptop carbon neutral.
+
+sustainability
+Open Source Ecosystems
+This product isn’t ours, it’s yours. We’ve opened design files and documentation on GitHub for Input Modules (powered by QMK firmware on Raspberry Pi RP2040), the Expansion Bay system, Expansion Cards, Embedded Controller firmware and more under open source licenses.
+
+opensource ecosystem
+Framework Marketplace
+Pick up new modules for upgrade, replacement, and customization of your Framework Laptop 16 in the Framework Marketplace. In addition to the parts and products we make, we're opening up the ecosystem for other companies and individuals for participate.

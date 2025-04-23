@@ -1,0 +1,291 @@
+How Do You Show Respect for the Planet?
+
+The Lenovo ThinkPad X1 Carbon Gen 12 (14ʺ Intel) laptop still uses carbon fiber for the chassis — but better yet some of that carbon fiber is recycled from post-industrial remnants and is used along with 90% recycled magnesium. Plus, the chassis, the battery pack, the speaker enclosure, and the power adapter all include recycled post-consumer content. And we don’t stop there. The packaging is 100% plastic-free and comprised in part with rapid-renewable materials made from bamboo-sugar-cane fiber.
+
+Close-up of display & keyboard on the Lenovo X1 Carbon Gen 12 open 90 degrees, with Intel Core Ultra & Intel Evo Edition badges.
+Elevated Performance & Lasting Battery
+
+The ThinkPad X1 Carbon Gen 12 boasts the world’s first laptop powered by Intel® Core™ Ultra processors, making it ideal for creating and on-the-go productivity. Enjoy optimized performance with workloads pushed to dedicated AI engines, including the low-power neural processing unit (NPU) for sustained tasks and resilient battery life. Go ahead, turn on auto-framing or low-light enhancement for your online meetings, even when unplugged! Choose the Intel vPro® Evo™ Edition, for multilayer security, professional-grade performance, reliable stability, and complete management for IT.
+
+Close-up detail of the Communications Bar on top of the Lenovo ThinkPad X1 Carbon Gen 12 laptop display.
+Raise the Bar on Collaboration
+
+A Communications Bar, positioned at the top of the display for easy laptop opening, houses two cameras (FHD / infrared (IR)) — or upgrade to the premium 8MP & IR Mobile Industry Processor Interface (MIPI) with Computer Vision — both options include a webcam privacy shutter. Additionally, two 360-degree mics with AI-based noise cancellation, combined with Dolby Voice® and Dolby Atmos® deliver a superb audio experience. Plus, the ThinkPad X1 Carbon Gen 12 is Zoom-certified. Make calls, listen to music, or watch a video and enjoy the sublime sounds.
+
+Detail of keyboard with TrackPad & TrackPoint on the Lenovo ThinkPad X1 Carbon Gen 12 laptop.
+You Spoke. We Listened: We’ve Redesigned Our Legendary Keyboard
+
+Our redesigned ThinkPad keyboard now includes tactile markings to help people with visual impairments more easily find the correct keys. We’ve moved the fingerprint reader to the keyboard, resulting in a larger sensor for a better experience. Plus, our TrackPad is even larger now, at 120mm / 4.72ʺ. Our beloved red TrackPoint still lets you navigate —  but with a double tap, it opens the ThinkPad TrackPoint Quick Menu to optimize audio-visuals, set alerts against muting, and even take notes with the Dictation Toolbar for handy speech-to-text transcription.
+
+Front-facing Lenovo ThinkPad X1 Carbon Gen 12 laptop open 90 degrees, showcasing the 14ʺ display with Communications Bar at top.
+A Feast for the Eyes
+
+Razor-thin bezels frame an optional stunning 14ʺ 2.8K OLED display with 120Hz refresh rate. Sharp, clear details make content pop and colors more vibrant than ever on the ThinkPad X1 Carbon Gen 12 laptop. But perhaps the best part yet? It’s easy on the eyes with Eyesafe® certification, so you can put in the long hours to meet your deadlines and not worry about eye-strain and fatigue.
+
+Floating smartphone next to Lenovo ThinkPad X1 Carbon Gen 12 laptop open 90 degrees, with background icons for phone, messages, notifications.
+Smartphone not included.
+Engineered for a No-Compromise Experience
+
+The Intel® Evo™ Edition, ThinkPad X1 Carbon Gen 12 laptop is engineered to do it all. Experience all-day battery life, instant wake, and best-in-class connectivity. No matter what tasks you tackle, this device is highly responsive. Plus, with Intel® Unison™, you can sync your laptop with any iOS or Android smartphone and then call or text, and even transfer files, photos, and videos all from the convenience of your PC.
+
+Two Lenovo ThinkPad X1 Carbon Gen 12 laptops open 90 degrees, one with various apps open & the other with a video conference.
+Unleash Software Superpowers
+
+Get the most out of your device with preinstalled Lenovo apps. Lenovo View is an AI-based camera app that enhances video quality and provides intelligent collaboration, privacy, and digital wellness features. Lenovo Vantage centralizes settings to safeguard data, automate updates, and improve performance — or Lenovo Commercial Vantage for IT manageability. We make it easier and safer to do your job well.
+
+Overhead shot of a person on a train using the Lenovo ThinkPad X1 Carbon Gen 12 laptop, on a table.
+Stand Tough With Battle-Tested ThinkPad
+
+We use the US Department of Defense's MIL-STD 810H to create a balance of reliability and durability for ThinkPad laptops. Meeting or exceeding 12 standards, 26 procedures, and 200+ quality checks ensure that these devices run in extreme conditions, including harsh variables like Arctic wilderness, desert dust storms, extreme temps, pressure, humidity, vibration, and more.
+
+A woman is on her smartphone, typing with her right hand on the Lenovo ThinkPad X1 Carbon Gen 12 laptop, which is on a table surrounded by plants.
+Your Face. Your Fingerprint. Your Fortress.
+
+Biometrics provide extra protection on the ThinkPad X1 Carbon Gen 12 laptop, from the fingerprint reader to facial recognition software. ThinkShield, our comprehensive suite of security solutions, boasts discrete Trusted Platform Module (dTPM) to safeguard critical data with encryption. Plus, AI-powered Intel® Threat Detection Technology helps prevent ransomware, cryptojacking, and more. When it comes to security and protecting your assets, we’ve got you covered!
+
+Specifications may vary depending upon region / model.
+Tech Specs
+Performance
+Processor
+Intel® Core™ Ultra 5 125U Processor (E-Core Max 3.60 GHz, P-Core Max 4.30 GHz with Turbo Boost, 12 Cores, 14 Threads, 12 MB Cache)
+
+Intel® Core™ Ultra 5 135U Processor with vPro® (E-cores up to 3.60 GHz P-cores up to 4.40 GHz with Turbo Boost, 12 Cores, 14 Threads, 12 MB Cache)
+
+Intel® Core™ Ultra 7 155U Processor (E-Core Max 3.80 GHz, P-Core Max 4.80 GHz with Turbo Boost, 12 Cores, 14 Threads, 12 MB Cache)
+
+Intel® Core™ Ultra 7 165U Processor with vPro® (E-cores up to 3.80 GHz P-cores up to 4.90 GHz with Turbo Boost, 12 Cores, 14 Threads, 12 MB Cache)
+
+Intel® Core™ Ultra 5 125H Processor (E-Core Max 3.60 GHz, P-Core Max 4.50 GHz with Turbo Boost, 14 Cores, 18 Threads, 18 MB Cache)
+
+Intel® Core™ Ultra 7 155H Processor (E-Core Max 3.80 GHz, P-Core Max 4.80 GHz with Turbo Boost, 16 Cores, 22 Threads, 24 MB Cache)
+
+Operating System
+Windows 11 Pro – Lenovo recommends Windows 11 Pro for business
+
+Windows 11 Home
+
+Ubuntu Linux
+
+Fedora Linux
+
+Graphics
+Integrated Intel® Graphics
+
+Integrated Intel® Arc™ Graphics
+
+Memory
+Up to 64GB LPDDR5X 6400MHz
+
+Storage
+Up to 2TB PCIe Gen4 Performance SSD
+
+Battery
+57Whr battery with optimized power distribution for longer life unplugged
+
+Rapid Charge (60 minutes = 80% capacity), requires 65W or higher adapter
+
+Audio
+Dolby Atmos®
+
+2 x speakers
+
+2 x 360-degree quad-array microphones
+
+Dolby Voice® certified for professional conferencing solution
+
+Camera
+1080p FHD & infrared (IR) with webcam privacy shutter
+
+2160p UHD RGB+IR with Computer Vision
+
+Connectivity
+Ports/Slots
+2 x USB-C® (Thunderbolt™ 4, USB 40Gbps)
+
+2 x USB-A (USB 5Gbps)
+
+Headphones / mic combo
+
+HDMI 2.1 (supports resolution up to 4K@60Hz)
+
+Optional: Nano SIM slot (Available Spring 2024)
+
+
+
+* USB port transfer speeds are approximate and depend on many factors, such as processing capability of host/peripheral devices, file attributes, system configuration and operating environments; actual speeds will vary and may be less than expected.
+
+Wireless
+Intel® WiFi 6E* AX211 802.11AX (2 x 2)
+
+Bluetooth® 5.3
+
+WWAN Optional : Quectel EM160R-GL 4G LTE CAT16
+
+WWAN Optional : Quectel RM520N-GL 5G Sub6
+
+vPro®: On vPro® Processors
+
+
+
+* 6GHz WiFi 6E operation is dependent on the support of the operating system, routers/APs/gateways that support WiFi 6E, along with the regional regulatory certifications and spectrum allocation.
+
+Supported Docking
+Thunderbolt™ Dock
+
+USB-C® Dock
+
+Design
+Display
+14ʺ WUXGA (1920 x 1200) IPS, touchscreen, antiglare, low power, 400nit, 100% sRGB, Eyesafe®
+
+14ʺ WUXGA (1920 x 1200) IPS, antiglare, low power, 400nit, 100% sRGB, Eyesafe®
+
+14" 2.8K (2880 x 1800), OLED, Anti-Glare/Anti Reflection/Anti Smudge, Non-Touch, HDR 500, 100%DCI-P3, 400 nits, 120Hz, Low Blue Light
+
+14" 2.8K (2880 x 1800), OLED, Anti-Glare/Anti Reflection/Anti Smudge, Touch, HDR 500, 100%DCI-P3, 400 nits, 120Hz, Low Blue Light
+
+14" WUXGA (1920 x 1200), IPS, Anti-Glare, Non-Touch, 100%sRGB, 500 nits, 60Hz, ePrivacy Filter
+
+Dimensions (H x W x D)
+14.96mm x 312.8mm  x 214.75mm / 0.59ʺ x 12.31ʺ x 8.45ʺ
+
+Weight
+Starting at 1.09kg / 2.42bs
+
+Keyboard
+ThinkPad TrackPoint Keyboard (1.5mm travel)
+
+Spill-resistant 
+
+Glass TrackPad with 3 buttons (120mm / 4.72") 
+
+Backlit with white LED lighting 
+
+Air intake keys
+
+Dual-function TrackPoint: navigate the cursor or double-tap to open TrackPoint Quick Menu
+
+Color
+Eclipse Black with Carbon Fiber Weave Top Cover
+
+Eclipse Black with Classic Black Top Cover
+
+Sustainability
+Material
+3% post-industrial recycled carbon fiber on top cover (A side)
+
+90% recycled magnesium on keyboard frame (C side)
+
+55% recycled aluminum & 45% hydro-aluminum on bottom cover (D side)
+
+90% post-consumer content (PCC) recycled plastic used in speaker enclosure
+
+90% PCC recycled plastic used in the battery enclosure
+
+90% PCC recycled plastic used in power adaptor
+
+30% PCC recycled plastic in cable holders
+
+85% PCC recycled plastic in keycaps
+
+Low-temperature solder on memory modules, SSD board, & fingerprint module 
+
+Forest Stewardship Council® certified plastic-free packaging with bamboo-sugar cane packaging & standard cushions
+
+Certifications / Registries
+ENERGY STAR® 8.0
+
+EPEAT® Gold, where applicable*
+
+Eyesafe®
+
+Forest Stewardship Council® (FSC) certified packaging
+
+Intel® Evo™
+
+MIL-SPEC 810H
+
+TCO 9
+
+Zoom Certified – Premium Laptop
+
+
+
+*Visit www.epeat.net for registration status by country.
+
+Other Information
+ThinkShield Security
+Computer Vision Human Presence Detection (requires optional 8MP & IR Camera)
+
+Discreet Trusted Platform Module (dTPM) 2.0
+
+Facial recognition login via Windows Hello (requires IR camera)
+
+Fingerprint reader (match-on-chip) on keyboard
+
+Firmware Shield
+
+Intel® Threat Detection Technology
+
+Intel vPro® security (select models)
+
+Kensington Nano Security Slot™
+
+Microsoft Secured-core PCs (select models)
+
+Optional: PrivacyGuard
+
+Optional: PrivacyAlert with Glance app
+
+Webcam privacy shutter
+
+Preloaded Software
+Lenovo Commercial Vantage
+
+Lenovo View
+
+Intel® Unison™ 2.0
+
+Intel® Connectivity Performance Suite
+
+Office 365 (trial)
+
+TrackPoint Quick Menu
+
+What’s in the Box
+ThinkPad X1 Carbon Gen 12 laptop
+
+65W USB-C® Slim AC Adapter (supports Rapid Charge)
+
+Internal Battery
+
+Quick Start Guide
+
+Other Information
+Full spec list for part numbers starting with 21KC available herebl1k8czbld19brd9gpkazvh4sfodt0998416.jpg
+
+
+
+*Not all specs available on lenovo.com
+
+Specifications may vary depending on region/model and availability
+
+Ports & Slots
+
+Two side-view closed-cover profiles of the left & right ports & slots on the Lenovo ThinkPad X1 Carbon Gen 12 laptop, labeled 1 – 8.
+1
+USB-A (USB 5Gpbs)
+5
+Headphone / mic combo
+2
+2 x USB-C® (Thunderbolt™ 4, USB 40Gbps)
+6
+USB-A (USB 5Gpbs)
+3
+Optional SIM slot (Available Spring 2024)
+7
+HDMI 2.1
+4
+Power button
+8
+Kensington Nano Security Slot™
