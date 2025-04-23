@@ -6,7 +6,7 @@ from pathlib import Path
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.tools import tool
 
-from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPOINT, PRODUCT_TYPE
+from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPOINT, PRODUCT_TYPE, load_marketing_content
 
 
 class ProductDetailsInput(BaseModel):
@@ -36,12 +36,16 @@ def product_details(product_id: str, description: str = "") -> dict:
         image_path = IMAGES_DIR / f"{product_id}.jpg"
         has_image = image_path.exists()
         
-        # Return the product data with image info
+        # Load marketing content if available
+        marketing_content = load_marketing_content(product_id)
+        
+        # Return the product data with image info and marketing content
         return {
             **product,
             "has_image": has_image,
             "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id}" if has_image else None,
-            "description": description
+            "description": description,
+            "marketing_content": marketing_content
         }
     
     except Exception as e:

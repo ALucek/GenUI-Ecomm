@@ -7,9 +7,16 @@ DEFAULT_PRODUCT_TYPE = "laptops"
 # Get product type from environment variable or use default
 PRODUCT_TYPE = os.environ.get("GENUI_PRODUCT_TYPE", DEFAULT_PRODUCT_TYPE)
 
+# Default user profile
+DEFAULT_USER_PROFILE = "default"
+
+# Get user profile from environment variable or use default
+USER_PROFILE = os.environ.get("GENUI_USER_PROFILE", DEFAULT_USER_PROFILE)
+
 # Base paths
 BACKEND_DIR = Path(__file__).parent.parent
 PRODUCTS_DIR = BACKEND_DIR / PRODUCT_TYPE
+USER_PROFILES_DIR = BACKEND_DIR / "user_profiles"
 
 # Product catalog path
 CATALOG_PATH = PRODUCTS_DIR / "catalog.csv"
@@ -20,15 +27,55 @@ IMAGES_DIR = PRODUCTS_DIR / "images"
 # Product knowledge directory (for potential future use)
 KNOWLEDGE_DIR = PRODUCTS_DIR / "knowledge"
 
+# User profile path
+USER_PROFILE_PATH = USER_PROFILES_DIR / f"{USER_PROFILE}.txt"
+
 # API endpoints
 # Use the new dynamic endpoint structure: /api/product-images/[type]/[id]
 PRODUCT_IMAGES_ENDPOINT = f"/api/product-images/{PRODUCT_TYPE}"
 
+# Function to load user profile
+def load_user_profile():
+    """
+    Load user profile from the profiles directory.
+    Returns the content as a string or None if the file doesn't exist.
+    """
+    try:
+        if USER_PROFILE_PATH.exists():
+            with open(USER_PROFILE_PATH, 'r') as file:
+                return file.read()
+        print(f"Warning: User profile {USER_PROFILE_PATH} not found. Using empty profile.")
+        return "No profile information available."
+    except Exception as e:
+        print(f"Error loading user profile {USER_PROFILE}: {str(e)}")
+        return "Error loading profile."
+
+# Function to load marketing content for a specific product
+def load_marketing_content(product_id):
+    """
+    Load marketing content from the knowledge directory for a specific product.
+    Returns the content as a string or None if the file doesn't exist.
+    """
+    try:
+        knowledge_file = KNOWLEDGE_DIR / f"{product_id}.txt"
+        if knowledge_file.exists():
+            with open(knowledge_file, 'r') as file:
+                return file.read()
+        return None
+    except Exception as e:
+        print(f"Error loading marketing content for product {product_id}: {str(e)}")
+        return None
+
 # System prompt templates
-# These will be formatted with the product type
+# These will be formatted with the product type and user profile
 SYSTEM_PROMPT_TEMPLATE = """
 You are a helpful {product_type} shopping assistant focused on understanding user needs and providing a guided, visual shopping experience. 
 Your primary goal is to use tools to present information and recommendations, creating a generative UI interaction whenever possible. Focus on how {product_type} features benefit the user rather than just listing specs. Use the provided {product_type} catalog to find relevant Product IDs for tool usage.
+
+User Profile Information:
+{user_profile}
+
+You should use this profile information to personalize your recommendations and responses. Consider the user's preferences, browsing history, past purchases, and other relevant information when suggesting products or answering questions.
 
 You have these tools:
 
@@ -74,6 +121,8 @@ Core Interaction Guidelines:
 
 - **Use spaced line breaks** (paragraphs and sentences) to structure responses for better readability.
 
+- **Personalization:** Actively reference the user's profile information throughout the conversation, especially when making recommendations. Mention specific preferences or past behaviors that inform your suggestions.
+
 Remember: Your default action is to call a tool using the correct Product ID(s) from the catalog. Even if the user doesn't explicitly ask, find the most relevant tool and IDs to enhance the conversation and visually guide the user towards the best {product_type} choice. You can provide explanatory text *after* the tool results are processed.
 """
 
@@ -81,10 +130,16 @@ FINAL_RESPONSE_SYSTEM_PROMPT_TEMPLATE = """
 You are a helpful {product_type} shopping assistant. A tool has just presented information to the user (e.g., product details, comparison, recommendations). 
 Your task is to provide a concise, **benefit-focused** textual response that connects the user's query, the chat history, and the information just displayed by the tool. Your goal is to help the user understand the information in the context of their needs and guide them forward.
 
+User Profile Information:
+{user_profile}
+
 Instructions:
+- Use the user profile information to personalize your responses. Reference specific preferences, past behavior, or characteristics when relevant.
 - Review the chat history, the user's original input, and the preceding AI message which describes the tool action and its results.
+- When marketing content is provided in the context, incorporate key points from it to enhance your response. Use this content to highlight specific benefits, features, or unique selling points of the product(s).
 - Briefly acknowledge the information presented via the tool (e.g., 'Okay, I've pulled up the details for that {product_type}...' or 'Here's the comparison you asked for...').
 - Explain the **significance** of the tool's output in relation to the user's stated needs or query. **Focus on the benefits** of the features shown, not just the specs.
+- Use any provided marketing content to give your response more depth and authenticity, but translate marketing language into clear, helpful information that addresses the user's specific needs.
 - Guide the user on potential next steps (e.g., 'Does this look like a good fit?', 'Would you like to compare it to another model?', 'What other features are important to you?') or ask relevant clarifying questions based on the current context.
 - Maintain a helpful, conversational, and **benefit-focused** tone throughout.
 - **Use Markdown:** Use light markdown (like `**bold**` for emphasis or `-` for lists) to format your response clearly.
@@ -94,9 +149,11 @@ Instructions:
 """
 
 def get_system_prompt() -> str:
-    """Return the formatted system prompt for the current product type."""
-    return SYSTEM_PROMPT_TEMPLATE.format(product_type=PRODUCT_TYPE)
+    """Return the formatted system prompt for the current product type and user profile."""
+    user_profile = load_user_profile()
+    return SYSTEM_PROMPT_TEMPLATE.format(product_type=PRODUCT_TYPE, user_profile=user_profile)
 
 def get_final_response_system_prompt() -> str:
-    """Return the formatted final response system prompt for the current product type."""
-    return FINAL_RESPONSE_SYSTEM_PROMPT_TEMPLATE.format(product_type=PRODUCT_TYPE) 
+    """Return the formatted final response system prompt for the current product type and user profile."""
+    user_profile = load_user_profile()
+    return FINAL_RESPONSE_SYSTEM_PROMPT_TEMPLATE.format(product_type=PRODUCT_TYPE, user_profile=user_profile) 

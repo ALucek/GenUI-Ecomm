@@ -1,0 +1,15 @@
+Name: Alex Thompson
+Age: 28
+Occupation: Software Developer
+Preferences:
+- Prefers lightweight laptops for portability
+- Needs high performance for coding and development
+- Values long battery life for working remotely
+- Budget-conscious, looking for value over premium brands
+- Interested in laptops with good Linux compatibility
+- Previous purchases include: MacBook Pro (2019), Dell XPS 13 (2017)
+Browsing History:
+- Recently viewed coding laptops under $1500
+- Compared gaming laptops vs. developer workstations
+- Searched for "best laptop for software development 2023"
+- Looked at reviews for laptops with 32GB RAM 

@@ -6,7 +6,7 @@ from pathlib import Path
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain_core.tools import tool
 
-from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPOINT, PRODUCT_TYPE
+from gen_ui_backend.config import CATALOG_PATH, IMAGES_DIR, PRODUCT_IMAGES_ENDPOINT, PRODUCT_TYPE, load_marketing_content
 
 
 class ProductComparisonInput(BaseModel):
@@ -45,17 +45,23 @@ def product_comparison(product_id_1: str, product_id_2: str, description: str = 
         has_image1 = image_path1.exists()
         has_image2 = image_path2.exists()
         
+        # Load marketing content for both products
+        marketing_content1 = load_marketing_content(product_id_1)
+        marketing_content2 = load_marketing_content(product_id_2)
+        
         # Prepare comparison data
         comparison_data = {
             "product1": {
                 **product1,
                 "has_image": has_image1,
-                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_1}" if has_image1 else None
+                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_1}" if has_image1 else None,
+                "marketing_content": marketing_content1
             },
             "product2": {
                 **product2,
                 "has_image": has_image2,
-                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_2}" if has_image2 else None
+                "image_url": f"{PRODUCT_IMAGES_ENDPOINT}/{product_id_2}" if has_image2 else None,
+                "marketing_content": marketing_content2
             },
             "description": description
         }

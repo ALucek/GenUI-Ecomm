@@ -279,15 +279,30 @@ def generate_final_response(state: GenerativeUIState, config: RunnableConfig) ->
 
     # Create a user-friendly description of the tool result for context
     tool_description = ""
+    marketing_content = ""
+    
     if tool_type == "product-details":
         product_name = tool_result.get("name", f"the {PRODUCT_TYPE} item") if isinstance(tool_result, dict) else f"the {PRODUCT_TYPE} item"
         tool_description = f"detailed information about {product_name}"
+        # Include marketing content if available
+        if isinstance(tool_result, dict) and "marketing_content" in tool_result and tool_result["marketing_content"]:
+            marketing_content = f"\n\nMarketing Content for {product_name}:\n{tool_result['marketing_content']}"
     elif tool_type == "product-comparison":
         product1_name = f"first {PRODUCT_TYPE} item"
         product2_name = f"second {PRODUCT_TYPE} item"
         if isinstance(tool_result, dict):
-            product1_name = tool_result.get("product1", {}).get("name", f"first {PRODUCT_TYPE} item")
-            product2_name = tool_result.get("product2", {}).get("name", f"second {PRODUCT_TYPE} item")
+            if "product1" in tool_result and isinstance(tool_result["product1"], dict):
+                product1_name = tool_result["product1"].get("name", f"first {PRODUCT_TYPE} item")
+                # Include marketing content for product 1 if available
+                if "marketing_content" in tool_result["product1"] and tool_result["product1"]["marketing_content"]:
+                    marketing_content += f"\n\nMarketing Content for {product1_name}:\n{tool_result['product1']['marketing_content']}"
+            
+            if "product2" in tool_result and isinstance(tool_result["product2"], dict):
+                product2_name = tool_result["product2"].get("name", f"second {PRODUCT_TYPE} item")
+                # Include marketing content for product 2 if available
+                if "marketing_content" in tool_result["product2"] and tool_result["product2"]["marketing_content"]:
+                    marketing_content += f"\n\nMarketing Content for {product2_name}:\n{tool_result['product2']['marketing_content']}"
+        
         tool_description = f"a comparison between {product1_name} and {product2_name}"
     elif tool_type == "product-tiles":
         title = f"{PRODUCT_TYPE}"
@@ -300,7 +315,7 @@ def generate_final_response(state: GenerativeUIState, config: RunnableConfig) ->
         tool_description = "some information using a tool"
 
     tool_context_message = AIMessage(
-        content=f"Context: I previously invoked a tool to show the user {tool_description}. The raw result of that tool call was: {tool_result}"
+        content=f"Context: I previously invoked a tool to show the user {tool_description}. The raw result of that tool call was: {tool_result}{marketing_content}"
     )
 
     # Construct the prompt messages using the new system prompt
