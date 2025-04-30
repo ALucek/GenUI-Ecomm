@@ -8,9 +8,6 @@ This application shows how an AI assistant can drive the user interface in an ec
 - The interface adapts in real-time as the conversation progresses
 
 ## Architecture
-
-<img src="https://github.com/bracesproul/gen-ui-python/blob/main/frontend/public/gen_ui_diagram.png" width=800>
-
 - **Backend**: Python with LangChain/LangGraph/LangServe
   - Handles AI decision-making
   - Defines tools for product manipulation
@@ -23,15 +20,13 @@ This application shows how an AI assistant can drive the user interface in an ec
 
 ## AI Shopping Assistant Persona
 
-The application includes a customizable shopping assistant persona that guides users through their shopping experience. The assistant:
+The shopping experience is personalized based on user profiles defined in `/backend/user_profiles/default.txt`, which contains information such as:
+- User name, age, and occupation
+- Previous purchases and browsing history
+- Technical preferences and requirements
+- Budget considerations
 
-- Provides personalized product recommendations based on user needs
-- Explains product features in terms of benefits rather than just listing specs
-- Asks clarifying questions to understand user preferences
-- Uses conversational tone while maintaining product expertise
-- References user profile information to personalize recommendations
-
-The assistant's behavior is controlled through system prompts in the `config.py` file, allowing you to adjust its personality, knowledge level, and interaction style.
+This profile information is referenced by the assistant during conversations to provide more relevant recommendations and contextualized explanations.
 
 ## Getting Started
 
