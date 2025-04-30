@@ -8,6 +8,9 @@ This application shows how an AI assistant can drive the user interface in an ec
 - The interface adapts in real-time as the conversation progresses
 
 ## Architecture
+
+<img src="https://github.com/bracesproul/gen-ui-python/blob/main/frontend/public/gen_ui_diagram.png">
+
 - **Backend**: Python with LangChain/LangGraph/LangServe
   - Handles AI decision-making
   - Defines tools for product manipulation
