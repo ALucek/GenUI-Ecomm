@@ -9,7 +9,7 @@ This application shows how an AI assistant can drive the user interface in an ec
 
 ## Architecture
 
-<img src="https://github.com/bracesproul/gen-ui-python/blob/main/frontend/public/gen_ui_diagram.png">
+![high_level_architecture](https://github.com/user-attachments/assets/e75ffc3c-269d-467c-8902-d60fc1d6aae4)
 
 - **Backend**: Python with LangChain/LangGraph/LangServe
   - Handles AI decision-making
@@ -20,6 +20,9 @@ This application shows how an AI assistant can drive the user interface in an ec
   - Renders components selected by the AI
   - Manages real-time updates via streaming
   - Handles product visualization
+
+<img src="https://github.com/bracesproul/gen-ui-python/blob/main/frontend/public/gen_ui_diagram.png">
+Original diagram from [gen-ui-python](https://github.com/bracesproul/gen-ui-python)
 
 ## AI Shopping Assistant Persona
 
