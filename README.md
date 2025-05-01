@@ -41,7 +41,9 @@ cp .env.example .env  # Add your API keys
 ```
 
 Required environment variables:
-- `OPENAI_API_KEY`
+- `OPENAI_API_KEY` - For LLM Access (Default model gpt-4.1)
+- `GENUI_PRODUCT_TYPE` - For custom product setups, default `laptops`
+- `NODE_PUBLIC_PRODUCT_TYPE` - For custom product setups, default `laptops`
 
 Optional but recommended:
 - LangSmith key for debugging
